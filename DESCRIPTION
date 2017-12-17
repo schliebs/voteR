@@ -1,0 +1,22 @@
+Package: voteR
+Title: Variety of Open Tools for Electoral Research
+Version: 0.0.0.9000
+Authors@R: person("Marcel", "Schliebs", email = "m.schliebs@zeppelin-university.net", role = c("aut", "cre"))
+Description: 
+  This package does this and that lalalallallallalalalal
+  llllllllllllllllllllllllllllllllllllllllllllllllllll
+  llllllllllllllllllllllllllllllllllllllllllllllllllll
+Depends: R (>= 3.4.1)
+License: MIT
+Encoding: UTF-8
+URL: https://www.prognosophie.de
+BugReports: https://www.prognosophie.de/impressum
+LazyData: true
+Imports: 
+  dplyr,
+  ggplot2,
+  gtools,
+  reshape2,
+  stringr,
+  tidyverse
+RoxygenNote: 6.0.1
