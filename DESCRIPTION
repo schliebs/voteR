@@ -25,5 +25,4 @@ Collate:
     'partynames.R'
     'polling.R'
     'useful_functions.R'
-    'polling.r'
     'zplotting.R'

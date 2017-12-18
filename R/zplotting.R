@@ -1,4 +1,4 @@
-#' @include polling.r
+#' @include polling.R
 
 
 vote = c(cdu = 0.33,
