@@ -3,10 +3,10 @@ Title: Variety of Open Tools for Electoral Research
 Version: 0.0.0.9000
 Authors@R: person("Marcel", "Schliebs", email = "m.schliebs@zeppelin-university.net", role = c("aut", "cre"))
 Description: 
-  This package does this and that lalalallallallalalalal
-  llllllllllllllllllllllllllllllllllllllllllllllllllll
-  llllllllllllllllllllllllllllllllllllllllllllllllllll
-Depends: R (>= 3.4.1)
+  This package does this and that vfb stuttgart lalala
+Depends: 
+  R (>= 3.4.1),
+  ggplot2
 License: MIT
 Encoding: UTF-8
 URL: https://www.prognosophie.de
@@ -16,7 +16,14 @@ Imports:
   dplyr,
   ggplot2,
   gtools,
-  reshape2,
+  hrbrthemes,
   stringr,
-  tidyverse
+  tidyr
 RoxygenNote: 6.0.1
+Collate: 
+    'importFrom.R'
+    'partynames.R'
+    'polling.R'
+    'useful_functions.R'
+    'polling.r'
+    'zplotting.R'
