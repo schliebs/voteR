@@ -1,2 +1,2 @@
 # voteR
-R package for electoral research 
+Variety of Open Tools for Electoral Research
