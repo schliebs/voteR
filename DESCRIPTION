@@ -26,7 +26,6 @@ Collate:
     'importFrom.R'
     'partynames.R'
     'polling.R'
-    'useful_functions.R'
     'zplotting.R'
 Suggests: knitr,
     rmarkdown
