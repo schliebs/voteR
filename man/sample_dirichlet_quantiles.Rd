@@ -2,16 +2,22 @@
 % Please edit documentation in R/polling.R
 \name{sample_dirichlet_quantiles}
 \alias{sample_dirichlet_quantiles}
+<<<<<<< HEAD
 \alias{sample_dirichlet_quantiles}
+=======
+>>>>>>> master
 \title{Empirical Dirichlet Quantiles from Multinomial Election Poll}
 \usage{
 sample_dirichlet_quantiles(vote = c(cdu = 0.5, spd = 0.4, fdp = 0.1),
   sample_n = 1000, n_draw = 10000, show_mean = TRUE,
   show_quantiles = c(0.1, 0.95), round = 2)
+<<<<<<< HEAD
 
 sample_dirichlet_quantiles(vote = c(cdu = 0.5, spd = 0.4, fdp = 0.1),
   sample_n = 1000, n_draw = 10000, show_mean = TRUE,
   show_quantiles = c(0.1, 0.95), round = 2)
+=======
+>>>>>>> master
 }
 \arguments{
 \item{vote}{A labeled party vote share vector.}
@@ -25,6 +31,7 @@ sample_dirichlet_quantiles(vote = c(cdu = 0.5, spd = 0.4, fdp = 0.1),
 \item{show_quantiles}{Vector of quantiles/confidence boundaries to calculate.}
 
 \item{round}{Logical T/F Round Results to k decimal digits.}
+<<<<<<< HEAD
 
 \item{show_mean}{Logical T/F: Show sample mean.}
 
@@ -41,13 +48,24 @@ A data frame containing \code{n} rows of samples for each party.
 Calculate empirical quantiles from a sample created by \code{\link{sample_dirichlet}} of a multinomial election poll
 
 Calculate empirical quantiles from a sample created by \code{\link{sample_dirichlet}} of a multinomial election poll
+=======
+}
+\value{
+A data frame containing \code{n} rows of samples for each party.
+}
+\description{
+Calculate empirical quantiles from a sample created by \code{\link{sample_dirichlet}} of a multinomial election poll
+>>>>>>> master
 }
 \section{Warning}{
 
 Do not operate heavy machinery within 8 hours of using this function.
+<<<<<<< HEAD
 
 
 Do not operate heavy machinery within 8 hours of using this function.
+=======
+>>>>>>> master
 }
 
 \examples{
@@ -62,6 +80,7 @@ sample_dirichlet_quantiles(vote = c(cdu = 0.33,
                  n_draw = 10000,
                  show_mean = TRUE,
                  show_quantiles = c(0.05,0.95))
+<<<<<<< HEAD
 sample_dirichlet_quantiles(vote = c(cdu = 0.33,
                           spd = 0.20,
                           fdp = 0.11,
@@ -73,4 +92,6 @@ sample_dirichlet_quantiles(vote = c(cdu = 0.33,
                  n_draw = 10000,
                  show_mean = TRUE,
                  show_quantiles = c(0.05,0.95))
+=======
+>>>>>>> master
 }

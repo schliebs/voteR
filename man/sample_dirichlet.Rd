@@ -2,14 +2,20 @@
 % Please edit documentation in R/polling.R
 \name{sample_dirichlet}
 \alias{sample_dirichlet}
+<<<<<<< HEAD
 \alias{sample_dirichlet}
+=======
+>>>>>>> master
 \title{Dirichlet-sample of a multinomial election poll}
 \usage{
 sample_dirichlet(vote = c(cdu = 0.5, spd = 0.4, fdp = 0.1), sample_n = 1000,
   n_draw = 10000)
+<<<<<<< HEAD
 
 sample_dirichlet(vote = c(cdu = 0.5, spd = 0.4, fdp = 0.1), sample_n = 1000,
   n_draw = 10000)
+=======
+>>>>>>> master
 }
 \arguments{
 \item{vote}{A labeled party vote share vector.}
@@ -17,6 +23,7 @@ sample_dirichlet(vote = c(cdu = 0.5, spd = 0.4, fdp = 0.1), sample_n = 1000,
 \item{sample_n}{The number of observations in the poll sample.}
 
 \item{n_draw}{How many samples to draw from the dirichlet distribution.}
+<<<<<<< HEAD
 
 \item{vote}{A labeled party vote share vector.}
 
@@ -33,13 +40,24 @@ A data frame containing \code{n} rows of samples for each party.
 Calculate a dirichlet-sample of a multinomial election poll
 
 Calculate a dirichlet-sample of a multinomial election poll
+=======
+}
+\value{
+A data frame containing \code{n} rows of samples for each party.
+}
+\description{
+Calculate a dirichlet-sample of a multinomial election poll
+>>>>>>> master
 }
 \section{Warning}{
 
 Do not operate heavy machinery within 8 hours of using this function.
+<<<<<<< HEAD
 
 
 Do not operate heavy machinery within 8 hours of using this function.
+=======
+>>>>>>> master
 }
 
 \examples{
@@ -52,6 +70,7 @@ sample_dirichlet(vote = c(cdu = 0.33,
                           sonstige = 0.05),
                  sample_n = 1000,
                  n_draw = 10000)
+<<<<<<< HEAD
 sample_dirichlet(vote = c(cdu = 0.33,
                           spd = 0.20,
                           fdp = 0.11,
@@ -61,4 +80,6 @@ sample_dirichlet(vote = c(cdu = 0.33,
                           sonstige = 0.05),
                  sample_n = 1000,
                  n_draw = 10000)
+=======
+>>>>>>> master
 }
