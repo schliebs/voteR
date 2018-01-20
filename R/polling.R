@@ -61,7 +61,7 @@ sample_dirichlet_quantiles <- function(vote = c(cdu = 0.5,
                                        sample_n = 1000,
                                        n_draw = 10000,
                                        show_mean = TRUE,
-                                       show_quantiles = c(0.10,0.95),
+                                       show_quantiles = c(0.05,0.95),
                                        round = 2){
 
   samples <- sample_dirichlet(vote = vote,sample_n = sample_n,n_draw = n_draw)

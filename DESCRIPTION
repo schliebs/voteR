@@ -23,10 +23,12 @@ Imports:
 RoxygenNote: 6.0.1
 Collate: 
     'create_manual.R'
+    'gles.R'
     'importFrom.R'
+    'partycolors.R'
     'partynames.R'
     'polling.R'
-    'zplotting.R'
+    'plotting.R'
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr

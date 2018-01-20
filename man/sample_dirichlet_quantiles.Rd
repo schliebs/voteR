@@ -6,7 +6,7 @@
 \usage{
 sample_dirichlet_quantiles(vote = c(cdu = 0.5, spd = 0.4, fdp = 0.1),
   sample_n = 1000, n_draw = 10000, show_mean = TRUE,
-  show_quantiles = c(0.1, 0.95), round = 2)
+  show_quantiles = c(0.05, 0.95), round = 2)
 }
 \arguments{
 \item{vote}{A labeled party vote share vector.}
