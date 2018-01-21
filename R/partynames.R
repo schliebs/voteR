@@ -37,3 +37,68 @@ partyname_contains <- function(country = "germany",
 
 partyname_contains("france","EM")
 
+
+
+# Get parties that are member of a certrain coalition
+
+#' Get coalition members
+#' @description Get parties that are member of a certrain coalition
+#' @param coalition Character string containing the name of the coalition. \cr
+#' Options are c("jamaika","schwarzgelb","rotgruen","groko","rotrotgruen","ampel","schwarzgruen").
+#' @return A vector containing all parties included in the coalition.
+#' @examples
+#' koa_members("schwarzgelb")
+#' @export
+koa_members <- function(koalition) {
+
+  df_koa <-
+    data.frame(koa = c("jamaika","schwarzgelb","rotgruen","groko","rotrotgruen","ampel","schwarzgruen"),
+               v1 =  c("cdu","cdu","spd","cdu","spd","spd","cdu"),
+               v2 =  c("fdp","fdp","gruene","spd","gruene","gruene","gruene"),
+               v3 =  c("csu","csu","","csu","linke","fdp","csu"),
+               v4 =  c("gruene","","","","","","")) %>%
+    mutate_all(funs(as.character(.)))
+
+  logical <- df_koa$koa == koalition
+
+  partiesin <- df_koa[df_koa$koa == koalition,2:5]
+
+  n <- length(which(partiesin != ""))
+
+  a <- df_koa [logical,2]
+  b <- df_koa [logical,3]
+  c <- df_koa [logical,4]
+  d <- df_koa [logical,5]
+
+  members <- c(a,b,c,d)
+  members <- members[stringr::str_length(members)>0]
+
+  return (members)
+}
+
+
+
+# Calculate mean koalition issue position and create new variables
+
+#' Get coalition members
+#' @description Calculate mean koalition issue position and create new variables
+#' @param data_in Character string containing the name the dataset.
+#' @param coalition Character string containing the name of the coalition.
+#' @param issue Character string containing the issue.
+#' @return The treated dataset.
+#' @examples
+#' koa_members(data_in = "gles2017_out",
+#'             coalition = "schwarzgelb",
+#'             issue = "soz")
+#' @export
+koa_positions <- function(data_in = "gles2017_out",
+                          coalition = "schwarzgelb",
+                          issue = "soz"){
+
+  members <- koa_members(coalition)
+
+  eval(parse(text = paste0("out <- ",data_in,"%>% mutate(",issue,"_",coalition," = (",  paste0(issue,"_",members,collapse = " + "),")/",length(members),")")))
+
+  return(out)
+
+}

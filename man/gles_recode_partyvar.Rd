@@ -8,7 +8,7 @@ gles_recode_partyvar(year = 2017, dataset_input = "gles2017",
   dataset_output = "gles2017_out", varname = "q52", own = NULL,
   varlabel = "soz", key = c("a", "b", "c", "d", "e", "f", "g"),
   partynames = c("cdu", "csu", "spd", "linke", "gruene", "fdp", "afd"),
-  NAs = c(-97, -98, -99), plot = TRUE)
+  NAs = "<0", plot = TRUE)
 }
 \arguments{
 \item{year}{year the GLES-study is from. Defaults to 2017.}
