@@ -8,7 +8,7 @@ gles_recode_partyvar(year = 2017, dataset_input = "gles2017",
   dataset_output = "gles2017_out", varname = "q52", own = NULL,
   varlabel = "soz", key = c("a", "b", "c", "d", "e", "f", "g"),
   partynames = c("cdu", "csu", "spd", "linke", "gruene", "fdp", "afd"),
-  NAs = c(-97, -98, -99))
+  NAs = c(-97, -98, -99), plot = TRUE)
 }
 \arguments{
 \item{year}{year the GLES-study is from. Defaults to 2017.}
@@ -28,6 +28,8 @@ gles_recode_partyvar(year = 2017, dataset_input = "gles2017",
 \item{partynames}{Character vector containing shortname party keys.}
 
 \item{NAs}{Numeric vector containing to-be-assigned NAs/Missing values.}
+
+\item{plot}{Logical T/F: Show relative frequency barplots while plotting.}
 }
 \value{
 A data frame containing output dataframe including newly appended new-variables.

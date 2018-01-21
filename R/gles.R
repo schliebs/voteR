@@ -11,6 +11,7 @@
 #' @param key Character vector containing original alphabetic party keys.
 #' @param partynames Character vector containing shortname party keys.
 #' @param NAs Numeric vector containing to-be-assigned NAs/Missing values.
+#' @param plot Logical T/F: Show relative frequency barplots while plotting.
 
 #' @return A data frame containing output dataframe including newly appended new-variables.
 #' @examples
@@ -24,14 +25,15 @@
 #'                      NAs = c(-97,-98,-99))
 #' @export
 gles_recode_partyvar <- function(year = 2017,
-                        dataset_input = "gles2017",
-                        dataset_output = "gles2017_out",
-                        varname = "q52",
-                        own = NULL,
-                        varlabel = "soz",
-                        key = c("a","b","c","d","e","f","g"),
-                        partynames = c("cdu","csu","spd","linke","gruene","fdp","afd"),
-                        NAs = c(-97,-98,-99)){
+                                 dataset_input = "gles2017",
+                                 dataset_output = "gles2017_out",
+                                 varname = "q52",
+                                 own = NULL,
+                                 varlabel = "soz",
+                                 key = c("a","b","c","d","e","f","g"),
+                                 partynames = c("cdu","csu","spd","linke","gruene","fdp","afd"),
+                                 NAs = c(-97,-98,-99),
+                                 plot = TRUE){
 
   try(if(length(key) != length(partynames)) stop("key and partynames vector not same length"))
 
@@ -61,16 +63,22 @@ gles_recode_partyvar <- function(year = 2017,
     )))
   }
 
-  out_long <-
-    tidyr::gather(data = dataset_output,key = party,value = value)
+  eval(parse(text = paste0(dataset_output,"<- ",dataset_output,"%>% mutate_all(.funs = funs(as.character(.)))")))
 
-  head(out_long)
-  ggplot(out_long) +
-    geom_bar(aes(x = value)) +
-    facet_wrap(~ party, ncol = 3, scales = "free")
+  if(plot == TRUE){
+    out_long <-
+      tidyr::gather(data = select(eval(parse(text = dataset_output)),-id,-year),key = party,value = value)
+    gg <-
+      ggplot(out_long) +
+      geom_bar(aes(x = value),na.rm=TRUE) +
+      facet_wrap(~ party, ncol = 3, scales = "free")
+    print(gg)
+  }
 
   return(eval(parse(text = paste0(dataset_output))))
 }
+
+
 
 # test <- recode_gles(year = 2017,
 #                     dataset_input = "gles2017",
