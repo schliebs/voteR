@@ -70,13 +70,20 @@ gles_recode_partyvar <- function(year = 2017,
 
     out_long <-
       tidyr::gather(data = select(eval(parse(text = dataset_output)),-id,-year),key = party,value = value)%>%
-      mutate_at(vars(value),funs(as.numeric(.)))
+      mutate_at(vars(value),funs(as.numeric(.))) %>%
+      group_by(party) %>%
+      mutate(n_group = n()) %>%
+      group_by(party,value) %>%
+      summarise(perc = n()/n_group) %>%
+      ungroup %>%
+      as.data.frame
 
     gg <-
       ggplot(out_long) +
       geom_bar(aes(x = value,
-                   y = (..count..)/sum(..count..)),na.rm=TRUE) +
-      facet_wrap(~ party, ncol = 3, scales = "free")
+                   y = perc),na.rm=TRUE,stat = "identity") +
+      facet_wrap(~ party, ncol = 3, scales = "free") +
+      scale_x_continuous(breaks = 1:11)
     print(gg)
   }
 
