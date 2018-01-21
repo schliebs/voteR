@@ -75,7 +75,7 @@ gles_recode_partyvar <- function(year = 2017,
       mutate(n_group = n()) %>%
       group_by(party,value) %>%
       summarise(perc = n()/n_group) %>%
-      ungroup %>%
+      ungroup() %>%
       as.data.frame
 
     gg <-
