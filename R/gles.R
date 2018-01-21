@@ -42,6 +42,9 @@ gles_recode_partyvar <- function(year = 2017,
   if(!exists(dataset_output)){eval(parse(text = paste0(dataset_output," <- data.frame(id = 1:nrow(",dataset_input,"))")))}
   eval(parse(text = paste0(dataset_output,"$year <- ",year)))
 
+
+  na_statement <- ifelse(is.vector(NAs),paste0("%in% c(",NAs,")"),paste0("<0"))
+
   for(q in 1:length(key)){
 
     eval(parse(text = paste0(
@@ -49,7 +52,7 @@ gles_recode_partyvar <- function(year = 2017,
     )))
 
     eval(parse(text = paste0(
-      dataset_output,"$",varlabel,"_",partynames[q],"[",dataset_input,"$",varname,key[q],"%in% c(",NAs,")] <- NA"
+      dataset_output,"$",varlabel,"_",partynames[q],"[",dataset_input,"$",varname,key[q],na_statement,"] <- NA"
     )))
   }
 
@@ -59,7 +62,7 @@ gles_recode_partyvar <- function(year = 2017,
     )))
 
     eval(parse(text = paste0(
-      dataset_output,"$",varlabel,"_selbst [",dataset_input,"$",own,"%in% c(",NAs,")] <- NA"
+      dataset_output,"$",varlabel,"_selbst [",dataset_input,"$",own,na_statement,"] <- NA"
     )))
   }
 
@@ -73,17 +76,22 @@ gles_recode_partyvar <- function(year = 2017,
       mutate_at(vars(value),funs(as.numeric(.))) %>%
       group_by(party) %>%
       mutate(n_group = n()) %>%
-      group_by(party,value) %>%
-      summarise(perc = n()/n_group) %>%
+      group_by(n_group,party,value) %>%
+      summarise(n = n()) %>%
+      mutate(perc = n/n_group) %>%
       ungroup() %>%
-      as.data.frame
+      as.data.frame()
 
     gg <-
       ggplot(out_long) +
-      geom_bar(aes(x = value,
-                   y = perc),na.rm=TRUE,stat = "identity") +
-      facet_wrap(~ party, ncol = 3, scales = "free") +
-      scale_x_continuous(breaks = 1:11)
+      geom_bar(aes(x = reorder(value,value),
+                   y = perc),
+               stat = "identity",
+               position = "identity",na.rm = T) +
+      facet_wrap(~ party, ncol = 3, scales = "free")+
+      labs(x = NULL,
+           y = "rel. frequency",
+           title = paste0("Relative Frequencies ",varlabel," ",year," (",varname,")"))
     print(gg)
   }
 
