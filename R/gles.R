@@ -32,7 +32,7 @@ gles_recode_partyvar <- function(year = 2017,
                                  varlabel = "soz",
                                  key = c("a","b","c","d","e","f","g"),
                                  partynames = c("cdu","csu","spd","linke","gruene","fdp","afd"),
-                                 NAs = c(-97,-98,-99),
+                                 NAs = "<0",
                                  plot = TRUE){
 
   try(if(length(key) != length(partynames)) stop("key and partynames vector not same length"))
@@ -43,7 +43,7 @@ gles_recode_partyvar <- function(year = 2017,
   eval(parse(text = paste0(dataset_output,"$year <- ",year)))
 
 
-  na_statement <- ifelse(is.vector(NAs),paste0("%in% c(",NAs,")"),paste0("<0"))
+  na_statement <- ifelse(!is.character(NAs),paste0("%in% c(",NAs,")"),paste0(NAs))
 
   for(q in 1:length(key)){
 
@@ -69,10 +69,12 @@ gles_recode_partyvar <- function(year = 2017,
 
   if(plot == TRUE){
 
-    eval(parse(text = paste0(dataset_output,"<- ",dataset_output,"%>% mutate_all(.funs = funs(as.character(.)))")))
+    eval(parse(text = paste0("plot_df <- ",dataset_output,"%>% mutate_all(.funs = funs(as.character(.)))")))
+
+    plot_df <- select(plot_df,contains(varlabel))
 
     out_long <-
-      tidyr::gather(data = select(eval(parse(text = dataset_output)),-id,-year),key = party,value = value)%>%
+      tidyr::gather(data = plot_df,key = party,value = value) %>%
       mutate_at(vars(value),funs(as.numeric(.))) %>%
       group_by(party) %>%
       mutate(n_group = n()) %>%
