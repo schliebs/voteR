@@ -10,4 +10,6 @@ path <- "C:/Users/Schliebs/OneDrive/github/voteR" #getwd()#find.package(pack)#
 
 file.remove("C:/Users/Schliebs/OneDrive/github/voteR/voteR.pdf")
 system(paste(shQuote(file.path(R.home("bin"), "R")),"CMD", "Rd2pdf", shQuote(path)))
+
+
 '

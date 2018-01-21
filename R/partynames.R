@@ -102,3 +102,40 @@ koa_positions <- function(data_in = "gles2017_out",
   return(out)
 
 }
+
+# Get coalitions
+
+#' Get coalitions
+#' @description Get all available coalitions
+#' @return The vector including all coalitions.
+#' @examples
+#' koas()
+#' @export
+koas <- function(year = 2017){
+  if(year == 2017) koas <- c("schwarzgelb","rotgruen","groko","rotrotgruen","ampel","schwarzgruen","jamaika")
+  if(year == 2013) koas <- c("schwarzgelb","rotgruen","groko","rotrotgruen","ampel","schwarzgruen")
+  return(koas)
+}
+
+
+# Distance function
+
+#' Calculate Distances
+#' @description Calculate Distances from different parties/koalitions
+#' @return The vector including all coalitions.
+#' @examples
+#' distance_function(data_in = "gles2017_out",
+#'                   who = "schwarzgelb",
+#'                   issue = "soz")
+#' @export
+distance_function <- function(data_in = "gles2017_out",
+                          who = "schwarzgelb",
+                          issue = "soz"){
+
+  eval(parse(text = paste0("out <- ",data_in,"%>% mutate(",issue,"_",coalition,"_distance = ",issue,"_",coalition,"-",issue,"_selbst)")))
+
+  return(out)
+
+}
+
+
