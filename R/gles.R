@@ -63,14 +63,19 @@ gles_recode_partyvar <- function(year = 2017,
     )))
   }
 
-  eval(parse(text = paste0(dataset_output,"<- ",dataset_output,"%>% mutate_all(.funs = funs(as.character(.)))")))
 
   if(plot == TRUE){
+
+    eval(parse(text = paste0(dataset_output,"<- ",dataset_output,"%>% mutate_all(.funs = funs(as.character(.)))")))
+
     out_long <-
-      tidyr::gather(data = select(eval(parse(text = dataset_output)),-id,-year),key = party,value = value)
+      tidyr::gather(data = select(eval(parse(text = dataset_output)),-id,-year),key = party,value = value)%>%
+      mutate_at(vars(value),funs(as.numeric(.)))
+
     gg <-
       ggplot(out_long) +
-      geom_bar(aes(x = value),na.rm=TRUE) +
+      geom_bar(aes(x = value,
+                   y = (..count..)/sum(..count..)),na.rm=TRUE) +
       facet_wrap(~ party, ncol = 3, scales = "free")
     print(gg)
   }
