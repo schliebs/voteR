@@ -13,5 +13,5 @@ The vector including all coalitions.
 Get all available coalitions
 }
 \examples{
-koas()
+koas(year = 2017)
 }

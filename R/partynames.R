@@ -109,12 +109,26 @@ koa_positions <- function(data_in = "gles2017_out",
 #' @description Get all available coalitions
 #' @return The vector including all coalitions.
 #' @examples
-#' koas()
+#' koas(year = 2017)
 #' @export
 koas <- function(year = 2017){
   if(year == 2017) koas <- c("schwarzgelb","rotgruen","groko","rotrotgruen","ampel","schwarzgruen","jamaika")
   if(year == 2013) koas <- c("schwarzgelb","rotgruen","groko","rotrotgruen","ampel","schwarzgruen")
   return(koas)
+}
+
+# Get main parties for Gles analysis
+
+#' Get parties
+#' @description Get main parties for Gles analysis
+#' @return The vector including all parties
+#' @examples
+#' parties(year = 2017)
+#' @export
+parties <- function(year = 2017){
+  if(year == 2017) p <- c("cdu","csu","spd","gruene","fdp","linke","afd")
+  if(year == 2013) p <- c("cdu","csu","spd","gruene","fdp","linke")
+  return(p)
 }
 
 
