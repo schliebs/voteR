@@ -64,10 +64,12 @@ gles_recode_partyvar <- function(year = 2017,
   out_long <-
     tidyr::gather(data = dataset_output,key = party,value = value)
 
-  head(out_long)
-  ggplot(out_long) +
+  gg <-
+    ggplot(out_long) +
     geom_bar(aes(x = value)) +
     facet_wrap(~ party, ncol = 3, scales = "free")
+  print(gg)
+  print("hi")
 
   return(eval(parse(text = paste0(dataset_output))))
 }
