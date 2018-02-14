@@ -28,6 +28,7 @@ Imports:
 RoxygenNote: 6.0.1
 Collate: 
     'create_manual.R'
+    'gles.R'
     'importFrom.R'
     'data_import.R'
     'weather_data.R'
