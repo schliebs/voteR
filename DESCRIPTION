@@ -1,12 +1,14 @@
-Package: voteR
-Title: Variety of Open Tools for Electoral Research
+Package: runR
+Title: Load, 
 Version: 0.0.0.9000
 Authors@R: person("Marcel", "Schliebs", email = "m.schliebs@zeppelin-university.net", role = c("aut", "cre"))
 Description:
   This package does this and that vfb stuttgart lalala
 Depends:
   R (>= 3.4.1),
-  ggplot2
+  ggplot2,
+  rgdal,
+  sp  
 License: MIT
 Encoding: UTF-8
 URL: https://www.prognosophie.de
@@ -15,18 +17,22 @@ LazyData: true
 Imports:
   dplyr,
   ggplot2,
-  gtools,
   hrbrthemes,
+  leaflet,
+  lubridate,
   magrittr,
+  rgdal,
+  sp,
   stringr,
   tidyr
 RoxygenNote: 6.0.1
 Collate: 
     'create_manual.R'
     'importFrom.R'
-    'partynames.R'
-    'polling.R'
-    'zplotting.R'
+    'data_import.R'
+    'weather_data.R'
+    'summarize_run.R'
+    'run_viz.R'
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
