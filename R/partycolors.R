@@ -1,0 +1,23 @@
+partycolors_t <- c(spd = "red",
+                   cdu = "black",
+                   cdu_csu = "black",
+                   csu = "darkblue",
+                   gruene = "darkgreen",
+                   fdp =  "#999900",
+                   afd = "blue",
+                   piraten = "orange",
+                   linke = "purple",
+                   andere = "black",
+                   sonstige = "grey")
+
+partycolors <- c(spd = "red",
+                 cdu = "black",
+                 cdu_csu = "black",
+                 csu = "darkblue",
+                 gruene = "green",
+                 fdp =  "yellow",
+                 afd = "blue",
+                 piraten = "orange",
+                 linke = "purple",
+                 andere = "grey",
+                 sonstige = "grey")
