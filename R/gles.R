@@ -111,3 +111,80 @@ gles_recode_partyvar <- function(year = 2017,
 #                     partynames = c("cdu","csu","spd","linke","gruene","fdp","afd"),
 #                     NAs = c(-97,-98,-99))
 
+
+# Calculate mean koalition issue position and create new variables
+
+#' Get coalition members
+#' @description Calculate mean koalition issue position and create new variables
+#' @param data_in Character string containing the name the dataset.
+#' @param coalition Character string containing the name of the coalition.
+#' @param issue Character string containing the issue.
+#' @return The treated dataset.
+#' @examples
+#' koa_members(data_in = "gles2017_out",
+#'             coalition = "schwarzgelb",
+#'             issue = "soz")
+#' @export
+koa_positions <- function(data_in = "gles2017_out",
+                          coalition = "schwarzgelb",
+                          issue = "soz"){
+
+  members <- koa_members(coalition)
+
+  eval(parse(text = paste0("out <- ",data_in,"%>% mutate(",issue,"_",coalition," = (",  paste0(issue,"_",members,collapse = " + "),")/",length(members),")")))
+
+  return(out)
+
+}
+
+
+# Distance function
+
+#' Calculate Distances
+#' @description Calculate Distances from different parties/koalitions
+#' @return The vector including all coalitions.
+#' @examples
+#' distance_function(data_in = "gles2017_out",
+#'                   who = "schwarzgelb",
+#'                   issue = "soz")
+#' @export
+distance_function <- function(data_in = "gles2017_out",
+                              who = "schwarzgelb",
+                              issue = "soz"){
+
+  eval(parse(text = paste0("out <- ",data_in,"%>% mutate(",issue,"_",who,"_distance = ",issue,"_",who,"-",issue,"_selbst)")))
+
+  return(out)
+
+}
+
+# Intra-Coalition Heterogeneity function
+
+#' Calculate Intra-Coalition Heterogeneity
+#' @description Calculate Intra-Coalition Heterogeneity from different parties/koalitions
+#' @return The vector including all coalitions.
+#' @examples
+#' distance_function(input = "gles2017_out",
+#'                   who = "schwarzgelb",
+#'                   issue = "soz")
+#' @export
+intrakoadistanz <- function(who = "schwarzgelb",
+                            issue = "lr",
+                            input = "gles2017_out"){
+
+  parties <- koa_members(who)
+  data <- eval(parse(text = input))
+  values <-
+    data %>%
+    select(matches(paste0(parties,collapse="|"))) %>%
+    select(matches(paste0(issue))) %>%
+    select(-matches(paste0("dist"))) %>%
+    mutate(rmax = do.call(pmax, .),
+           rmin = do.call(pmin, .)) %>%
+    mutate(hetero = abs(rmax-rmin)) %>%
+    select(hetero) %>%
+    as.data.frame()
+
+  string <- paste0(input,"$hetero_",who,"_",issue," <<- as.vector(values$hetero)")
+  eval(parse(text = string))
+}

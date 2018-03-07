@@ -2,6 +2,7 @@
 
 export(distance_function)
 export(gles_recode_partyvar)
+export(intrakoadistanz)
 export(koa_members)
 export(koa_positions)
 export(koas)

@@ -78,30 +78,7 @@ koa_members <- function(koalition) {
 
 
 
-# Calculate mean koalition issue position and create new variables
 
-#' Get coalition members
-#' @description Calculate mean koalition issue position and create new variables
-#' @param data_in Character string containing the name the dataset.
-#' @param coalition Character string containing the name of the coalition.
-#' @param issue Character string containing the issue.
-#' @return The treated dataset.
-#' @examples
-#' koa_members(data_in = "gles2017_out",
-#'             coalition = "schwarzgelb",
-#'             issue = "soz")
-#' @export
-koa_positions <- function(data_in = "gles2017_out",
-                          coalition = "schwarzgelb",
-                          issue = "soz"){
-
-  members <- koa_members(coalition)
-
-  eval(parse(text = paste0("out <- ",data_in,"%>% mutate(",issue,"_",coalition," = (",  paste0(issue,"_",members,collapse = " + "),")/",length(members),")")))
-
-  return(out)
-
-}
 
 # Get coalitions
 
@@ -132,24 +109,6 @@ parties <- function(year = 2017){
 }
 
 
-# Distance function
 
-#' Calculate Distances
-#' @description Calculate Distances from different parties/koalitions
-#' @return The vector including all coalitions.
-#' @examples
-#' distance_function(data_in = "gles2017_out",
-#'                   who = "schwarzgelb",
-#'                   issue = "soz")
-#' @export
-distance_function <- function(data_in = "gles2017_out",
-                          who = "schwarzgelb",
-                          issue = "soz"){
-
-  eval(parse(text = paste0("out <- ",data_in,"%>% mutate(",issue,"_",coalition,"_distance = ",issue,"_",coalition,"-",issue,"_selbst)")))
-
-  return(out)
-
-}
 
 
