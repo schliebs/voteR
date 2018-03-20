@@ -152,7 +152,7 @@ distance_function <- function(data_in = "gles2017_out",
                               who = "schwarzgelb",
                               issue = "soz"){
 
-  eval(parse(text = paste0("out <- ",data_in,"%>% mutate(",issue,"_",who,"_distance = ",issue,"_",who,"-",issue,"_selbst)")))
+  eval(parse(text = paste0("out <- ",data_in,"%>% mutate(",issue,"_distance_",who," = ",issue,"_",who,"-",issue,"_selbst)")))
 
   return(out)
 
@@ -170,7 +170,8 @@ distance_function <- function(data_in = "gles2017_out",
 #' @export
 intrakoadistanz <- function(who = "schwarzgelb",
                             issue = "lr",
-                            input = "gles2017_out"){
+                            input = "gles2017_out",
+                            year = 2017){
 
   parties <- koa_members(who)
   data <- eval(parse(text = input))
@@ -186,12 +187,12 @@ intrakoadistanz <- function(who = "schwarzgelb",
     select(hetero) %>%
     as.data.frame()
 
-  string1 <- paste0(input,"$hetero_",who,"_",issue," <<- as.vector(values$hetero)")
+  string1 <- paste0(input,"$hetero_",issue,"_",who," <<- as.vector(values$hetero)")
   eval(parse(text = string1))
 
   values2 <-
     gles %>%
-    filter (year == 2017) %>%
+    filter (year == year) %>%
     select(matches(paste0(c(parties,"selbst"),collapse="|"))) %>%
     select(matches(paste0(issue))) %>%
     select(-matches(paste0("dist"))) %>%
@@ -206,6 +207,6 @@ intrakoadistanz <- function(who = "schwarzgelb",
   innerhalb <-
     ifelse(selbst <= max & selbst >= min,1,0) %>% as.numeric()
 
-  string2 <- paste0(input,"$inside_",who,"_",issue," <<- innerhalb")
+  string2 <- paste0(input,"$inside_",issue,"_",who," <<- innerhalb")
   eval(parse(text = string2))
 }
