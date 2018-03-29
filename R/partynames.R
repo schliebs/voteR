@@ -52,11 +52,11 @@ partyname_contains("france","EM")
 koa_members <- function(koalition) {
 
   df_koa <-
-    data.frame(koa = c("jamaika","schwarzgelb","rotgruen","groko","rotrotgruen","ampel","schwarzgruen"),
-               v1 =  c("cdu","cdu","spd","cdu","spd","spd","cdu"),
-               v2 =  c("fdp","fdp","gruene","spd","gruene","gruene","gruene"),
-               v3 =  c("csu","csu","","csu","linke","fdp","csu"),
-               v4 =  c("gruene","","","","","","")) %>%
+    data.frame(koa = c("sozialliberal","jamaika","schwarzgelb","rotgruen","groko","rotrotgruen","ampel","schwarzgruen"),
+               v1 =  c("spd","cdu","cdu","spd","cdu","spd","spd","cdu"),
+               v2 =  c("fdp","fdp","fdp","gruene","spd","gruene","gruene","gruene"),
+               v3 =  c("","csu","csu","","csu","linke","fdp","csu"),
+               v4 =  c("","gruene","","","","","","")) %>%
     mutate_all(funs(as.character(.)))
 
   logical <- df_koa$koa == koalition
@@ -91,6 +91,7 @@ koa_members <- function(koalition) {
 koas <- function(year = 2017){
   if(year == 2017) koas <- c("schwarzgelb","rotgruen","groko","rotrotgruen","ampel","schwarzgruen","jamaika")
   if(year == 2013) koas <- c("schwarzgelb","rotgruen","groko","rotrotgruen","ampel","schwarzgruen")
+  if(year == 2009) koas <- c("schwarzgelb","rotgruen","groko","rotrotgruen","ampel","schwarzgruen","jamaika","sozialliberal")
   return(koas)
 }
 
@@ -105,6 +106,7 @@ koas <- function(year = 2017){
 parties <- function(year = 2017){
   if(year == 2017) p <- c("cdu","csu","spd","gruene","fdp","linke","afd")
   if(year == 2013) p <- c("cdu","csu","spd","gruene","fdp","linke")
+  if(year == 2009) p <- c("cdu","csu","spd","gruene","fdp","linke")
   return(p)
 }
 
