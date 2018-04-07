@@ -1,0 +1,33 @@
+navbar:
+  title: voteR
+  type: default
+  left:
+  - icon: fa-home fa-lg
+    href: index.html
+  - text: Get Started
+    href: articles/runR.html
+    menu:
+    - text: Test
+      href: articles/runR.html
+    - text: Test2
+      href: articles/vignette2.html
+  - text: Reference
+    href: reference/index.html
+  - text: News
+    href: news/index.html
+  right:
+  - icon: fa-github fa-lg
+    href: https://github.com/schliebs/runR
+
+reference:
+- title: All functions
+  desc: lala
+  contents:
+    ends_with("poll")
+- title: Exported Functions
+  desc: Functions exported by MODIStsp
+  contents:
+    starts_with("plot")
+
+
+

@@ -1,0 +1,36 @@
+---
+title: "Data Import"
+author: "Marcel Schliebs"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Data collection
+
+You can use your own smartphone to track your movements. So far, the import via [SportsTracker](https://www.sports-tracker.com/) is implemented. I am working on providing you with other import options in the future. If you find other apps that work with similar file formats, feel free to create a pull request or shoot me a [tweet](https://www.twitter.com/ma_schliebs) or email. 
+
+## SportsTracker
+
+Sportstracker is an application ... 
+
+- screenshot of how to track 
+- screenshot of download 
+- screenshot ??
+
+So far, you need to do this manually and download/export every single log file as described. I am thinking about maybe writing a scraper to automize this process, but would definitely have to check with SportsTracker first to see if they allow me to. 
+ 
+# Data import
+
+Once you have imported your log files to a folder, you can import the files into R. 
+

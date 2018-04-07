@@ -24,7 +24,6 @@ Imports:
   tidyr
 RoxygenNote: 6.0.1
 Collate: 
-    'behnke.R'
     'create_manual.R'
     'gles.R'
     'importFrom.R'
