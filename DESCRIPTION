@@ -24,13 +24,16 @@ Imports:
   tidyr
 RoxygenNote: 6.0.1
 Collate: 
+    'constituencymaps.R'
     'create_manual.R'
     'gles.R'
     'importFrom.R'
     'partycolors.R'
+    'partylogos.R'
     'partynames.R'
     'polling.R'
     'plotting.R'
+    'scrape_wahlrecht.R'
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
