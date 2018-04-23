@@ -3,7 +3,6 @@
 devtools::document()
 devtools::build()
 
-
 ############
 
 pack <- "voteR"
