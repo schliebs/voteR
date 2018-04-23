@@ -3,22 +3,72 @@ partynames <- list()
 ## France
 
 france <- list()
-france[["em"]] <- c("en marche","em")
-france[["lr"]] <- c("les republicains","lr")
-france[["ps"]] <- c("party socialiste","ps")
+
+france[["lrem"]] <- list(id = "lrem",
+                         longlabel = "La République En Marche!",
+                         shortlabel = "LREM",
+                         selectors = c("lrem","en marche","la république en marche"))
 
 
 ## Germany
 
 germany <- list()
-germany[["cdu"]] <- c("cdu","christlich demokratische union")
-germany[["csu"]] <- c("csu","christlich soziale union")
-germany[["union"]] <- c("union")
+germany[["cdu"]] <- list(id = "cdu",
+                         longlabel = "Christlich-Demokratische Union",
+                         shortlabel = "CDU",
+                         selectors = c("cdu","Christliche-Demokratische Union","Christliche-Demokratische Union Deutschlands"))
 
-#
+germany[["csu"]] <- list(id = "csu",
+                         longlabel = "Christlich-Soziale Union",
+                         shortlabel = "CSU",
+                         selectors = c("csu","Christliche-Soziale Union"),
+                         color = "black")
+
+germany[["spd"]] <- list(id = "spd",
+                         longlabel = "Sozialdemokratische Partei Deutschlands",
+                         shortlabel = "SPD",
+                         selectors = c("spd","Sozialdemokratische Partei Deutschlands"),
+                         color = "red")
+
+germany[["gruene"]] <- list(id = "gruene",
+                         longlabel = "Bündnis 90/Die Grünen",
+                         shortlabel = "Grüne",
+                         selectors = c("gruene","grüne","buendnis90"),
+                         color = c("green"))
+
+germany[["fdp"]] <- list(id = "gruene",
+                         longlabel = "Freiheitlich-Demokratische Partei Deutschlands",
+                         shortlabel = "FDP",
+                         selectors = c("fdp","Freiheitlich-Demokratische Partei Deutschlands","FDP/DPS","FDP/DVP"),
+                         color = c("yellow")
+                        )
+
+germany[["afd"]] <- list(id = "gruene",
+                            longlabel = "Alternative für Deutschland",
+                            shortlabel = "AfD",
+                            selectors = c("afd","Alternative für Deutschland"),
+                            color = c("blue"))
+
+germany[["linke"]] <- list(id = "linke",
+                         longlabel = "Die Linke",
+                         shortlabel = "Linke",
+                         selectors = c("linke","die linke","dielinke","pds"),
+                         color = c("purple"))
+
+
+others_ltw <- read.table("data/others.txt",encoding = "UTF-8")
+
+germany[["other"]] <- list(id = "other",
+                            longlabel = "Andere Parteien",
+                            shortlabel = "Andere",
+                            selectors = stringr::str_to_lower(others_ltw$V1),
+                            color = c("grey"))
+
 partynames[["germany"]] <- germany
-partynames[["france"]] <- france
 
+names(germany)
+
+#######
 country <- "germany"
 token <- "christlich"
 
@@ -35,7 +85,7 @@ partyname_contains <- function(country = "germany",
   ) %>% names()
 }
 
-partyname_contains("france","EM")
+partyname_contains("germany","csu")
 
 
 
@@ -110,6 +160,60 @@ parties <- function(year = 2017){
   return(p)
 }
 
+
+# Länder
+laender <-
+  data.frame(id = c("baden-wuettemberg",
+                    "bayern",
+                    "berlin",
+                    "brandenburg",
+                    "bremen",
+                    "hamburg",
+                    "hessen",
+                    "mecklenburg-vorpommern",
+                    "niedersachsen",
+                    "nordrhein-westfalen",
+                    "rheinland-pfalz",
+                    "saarland",
+                    "sachsen",
+                    "sachsen-anhalt",
+                    "schleswig-holstein",
+                    "thueringen"),
+          #   nrnew = c(),
+               fullabel = c("Baden-Württemberg",
+                            "Bayern",
+                            "Berlin",
+                            "Brandenburg",
+                            "Bremen",
+                            "Hamburg",
+                            "Hessen",
+                            "Mecklenburg-Vorpommern",
+                            "Niedersachsen",
+                            "Nordrhein-Westfalen",
+                            "Rheinland-Pfalz",
+                            "Saarland",
+                            "Sachsen",
+                            "Sachsen-Anhalt",
+                            "Schleswig-Holstein",
+                            "Thüringen"),
+                         shortlabel = c("BW",
+                                 "BY",
+                                 "BE",
+                                 "BB",
+                                 "HB",
+                                 "HH",
+                                 "HE",
+                                 "MV",
+                                 "NI",
+                                 "NW",
+                                 "RP",
+                                 "SL",
+                                 "SN",
+                                 "ST",
+                                 "SH",
+                                 "TH"))
+
+devtools::use_data(laender,overwrite = TRUE)
 
 
 

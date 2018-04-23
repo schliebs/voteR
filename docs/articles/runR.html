@@ -18,7 +18,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -27,8 +27,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">voteR</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">voteR</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
@@ -76,17 +80,20 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Vignette Title</h1>
                         <h4 class="author">Vignette Author</h4>
             
-            <h4 class="date">2018-04-08</h4>
-          </div>
+            <h4 class="date">2018-04-23</h4>
+      
+      
+      <div class="hidden name"><code>runR.Rmd</code></div>
+
+    </div>
 
     
     
-<div class="contents">
 <p>lorrem ipsssilalal tikitaka Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The <code>html_vignette</code> output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The <code>html_vignette</code> format:</p>
 <ul>
 <li>Never uses retina figures</li>
@@ -112,7 +119,7 @@
 <p>The figure sizes have been customised so that you can easily put two images side-by-side.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)
 <span class="kw">plot</span>(<span class="dv">10</span><span class="op">:</span><span class="dv">1</span>)</code></pre></div>
-<p><img src="runR_files/figure-html/unnamed-chunk-1-1.png" width="672"><img src="runR_files/figure-html/unnamed-chunk-1-2.png" width="672"></p>
+<p><img src="runR_files/figure-html/unnamed-chunk-1-1.png" width="700"><img src="runR_files/figure-html/unnamed-chunk-1-2.png" width="700"></p>
 <p>You can enable figure captions by <code>fig_caption: yes</code> in YAML:</p>
 <pre><code>output:
   rmarkdown::html_vignette:
@@ -292,7 +299,6 @@
 <li id="fn1"><p>A footnote here.<a href="#fnref1">↩</a></p></li>
 </ol>
 </div>
-</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -321,6 +327,8 @@
 
       </footer>
 </div>
+
+  
 
   </body>
 </html>

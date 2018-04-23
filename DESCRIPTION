@@ -3,7 +3,7 @@ Title: Variety of Open Tools for Electoral Research
 Version: 0.0.0.9000
 Authors@R: person("Marcel", "Schliebs", email = "m.schliebs@zeppelin-university.net", role = c("aut", "cre"))
 Description:
-  This package does this and that vfb stuttgart lalala
+  This package contains a variety of tools and datasets that can be used for electoral research.
 Depends:
   R (>= 3.4.1),
   ggplot2,
@@ -11,8 +11,8 @@ Depends:
   tidyverse
 License: MIT
 Encoding: UTF-8
-URL: https://www.prognosophie.de
-BugReports: https://www.prognosophie.de/impressum
+URL: schliebs.github.io/voteR
+BugReports: m.schliebs@zeppelin-university.net
 LazyData: true
 Imports:
   dplyr,
@@ -25,15 +25,14 @@ Imports:
 RoxygenNote: 6.0.1
 Collate: 
     'constituencymaps.R'
-    'create_manual.R'
     'gles.R'
     'importFrom.R'
     'partycolors.R'
-    'partylogos.R'
     'partynames.R'
     'polling.R'
     'plotting.R'
     'scrape_wahlrecht.R'
+    'wahldata.R'
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
