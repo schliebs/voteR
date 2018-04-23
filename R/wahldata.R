@@ -75,5 +75,15 @@
 #' }
 "landesregierungen"
 
+#' German regional GDP data
+#'
+#' @format A data frame with 27 rows and 18 variables:
+#' \describe{
+#'   \item{year}{regional level}
+#'   \item{...}{name of the bundesland}
+#'   \item{d}{Germany total sum}
+#' }
+"laenderbip"
+
 
 

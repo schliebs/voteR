@@ -238,5 +238,13 @@ landesregierungen <-
          ) %>%
   select(-election,-legislature) # remove
 
+dim(landesregierungen)
+
 devtools::use_data(landesregierungen,overwrite = TRUE)
 
+
+
+# BIP
+
+laenderbip <- bip
+devtools::use_data(laenderbip,overwrite = TRUE)
