@@ -11,6 +11,11 @@ path <- "C:/Users/Schliebs/OneDrive/github/packages/voteR" #getwd()#find.package
 file.remove("C:/Users/Schliebs/OneDrive/github/packages/voteR/voteR.pdf")
 system(paste(shQuote(file.path(R.home("bin"), "R")),"CMD", "Rd2pdf", shQuote(path)))
 
+
+
+source("helpers/update_yaml.R")
+update_yaml("voteR", overwrite = T)
+
 pkgdown::build_site()
 
 '

@@ -59,5 +59,21 @@
 #' }
 "structural_modeldata"
 
+#' German regional government cabinets for the whole post-war period
+#'
+#' @format A data frame with 325 rows and 11 variables:
+#' \describe{
+#'   \item{land}{regional level}
+#'   \item{cabinet}{name of the respective cabinet}
+#'   \item{years}{years cabinet was in office}
+#'   \item{dates}{specific dates cabinet was in office}
+#'   \item{parties}{parties forming the coalition}
+#'   \item{primeminister}{name of the government leader}
+#'   \item{party_x}{name of the forming parties}
+#'   \item{start}{year in which gov't started}
+#'   \item{end}{year in which it ended}
+#' }
+"landesregierungen"
+
 
 

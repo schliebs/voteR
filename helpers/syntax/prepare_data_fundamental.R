@@ -1,3 +1,4 @@
+library(plyr)
 library(tidyverse)
 library(magrittr)
 library(stringr)
@@ -9,10 +10,10 @@ data("laender")
 data <- bind_rows(bundestag_laenderebene,
                   landtagswahlen)
 
-landtagswahlen %>% filter(land == "baden-wuerttemberg") %>% View()
-bundestag_laenderebene %>% filter(land == "baden-wuerttemberg") %>% View()
-
-data %>% filter(land == "baden-wuerttemberg") %>% View()
+# landtagswahlen %>% filter(land == "baden-wuerttemberg") %>% View()
+# bundestag_laenderebene %>% filter(land == "baden-wuerttemberg") %>% View()
+#
+# data %>% filter(land == "baden-wuerttemberg") %>% View()
 
 
 # Throw out all elections before reunification
@@ -99,9 +100,9 @@ colnames(dauer) <- c("start","end")
 dauer %<>% as.tibble () %>% mutate(end = ifelse(end == "",2018,end))
 
 lreg <- data.frame(lreg,dauer)
-
+names(lreg)
 lreg %<>%
-  rename(land = X.U.FEFF.Land) %>%
+  dplyr::rename(land = X.U.FEFF.Land) %>%
   arrange(land,start)
 
 result %>%
@@ -226,4 +227,16 @@ dim(structural_modeldata)
 
 
 devtools::use_data(structural_modeldata,overwrite = TRUE)
+
+landesregierungen <-
+  lreg %>%
+  rename(cabinet = Kabinett,
+         years = Amtszeit.Jahr,
+         dates = Amtszeit.Datum,
+         parties = Beteiligte.Parteien,
+         primeminister = Ministerpräsident
+         ) %>%
+  select(-election,-legislature) # remove
+
+devtools::use_data(landesregierungen,overwrite = TRUE)
 
