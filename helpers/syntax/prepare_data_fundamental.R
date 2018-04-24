@@ -220,7 +220,8 @@ structural_modeldata <-
          cabinet = Kabinett,
          primeminister_name = Ministerpräsident,
          distance_btw_lag = distance_other_lag) %>%
-  select(-distance_lag_own,-Amtszeit.Jahr,-Amtszeit.Datum,-Beteiligte.Parteien,-legislature,-level)
+  select(-distance_lag_own,-Amtszeit.Jahr,-Amtszeit.Datum,-Beteiligte.Parteien,-legislature,-level)%>%
+  mutate_at(vars(distance_btw_lag),funs(as.numeric(.)))
 
 names(structural_modeldata)
 dim(structural_modeldata)
