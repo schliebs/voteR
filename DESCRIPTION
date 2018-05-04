@@ -27,6 +27,7 @@ Collate:
     'constituencymaps.R'
     'gles.R'
     'importFrom.R'
+    'make_dictionary.R'
     'partycolors.R'
     'partynames.R'
     'polling.R'
