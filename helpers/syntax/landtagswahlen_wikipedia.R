@@ -3,15 +3,13 @@ library(tidyverse)
 library(rvest)
 library(magrittr)
 
-
-
 url <- "https://de.wikipedia.org/wiki/Ergebnisse_der_Landtagswahlen_in_der_Bundesrepublik_Deutschland"
 
-#xml2::download_html(url,file = "landtagswahlen_wiki.html")
-brd <- read_html("landtagswahlen_wiki.html")
+#xml2::download_html(url,file = "helpers/rawdata/landtagswahlen_wiki.html")
+brd <- read_html("helpers/rawdata/landtagswahlen_wiki.html")
 
-
-spans <- brd %>%
+spans <-
+  brd %>%
   html_nodes(xpath = "//*/tr/td/span")
 xml_remove(spans)
 
@@ -302,7 +300,6 @@ fullseats <-
 
 as.commanumeric <- function(x) x %>% str_replace_all(",",".") %>% as.character() %>% as.numeric()
 
-
 fullvote %<>%
   mutate_at(vars(Wahltag),
             funs(as.Date(.,format = "%d.%m.%Y"))) %>%
@@ -313,7 +310,7 @@ fullvote %<>%
 
 # This is coded with survivorship bias: only contemporarily important parties included.
 
-main_parties <- c("CDU","SPD","CSU","FDP","Grüne","AfD","Linke") #"REP","NPD")
+main_parties <- c("CDU","SPD","CSU","FDP","Grüne","AfD","Linke","REP","NPD")
 
 # export this?
 remove_umlaut <- function(x){
@@ -341,16 +338,15 @@ colnames(fullvote) %<>%
 
 fullvote$year
 names(fullvote)
-names(bundestag_laender)
 
 
-landtagswahlen <-
+landtagswahlen_mitRechts <-
   fullvote %>%
   mutate(level = "landtagswahl") %>%
   mutate_at(vars(wbt,cdu:others),
             funs(./100))
 
-devtools::use_data(landtagswahlen,overwrite = TRUE)
+devtools::use_data(landtagswahlen_mitRechts,overwrite = TRUE)
 
 
 

@@ -55,18 +55,32 @@ germany[["linke"]] <- list(id = "linke",
                          selectors = c("linke","die linke","dielinke","pds"),
                          color = c("purple"))
 
+germany[["rep"]] <- list(id = "rep",
+                           longlabel = "Die Republikaner",
+                           shortlabel = "REP",
+                           selectors = c("republikaner","rep","die republikaner"),
+                           color = c("brown"))
 
-others_ltw <- read.table("data/others.txt",encoding = "UTF-8")
+germany[["npd"]] <- list(id = "linke",
+                           longlabel = "Nationaldemokratische Partei Deutschlands",
+                           shortlabel = "NPD",
+                           selectors = c("npd","nationaldemokratische partei","nationaldemokratische partei deutschlands","pds"),
+                           color = c("brown"))
+
+
+others_ltw <- read.table("data/others.txt",encoding = "UTF-8")%>% .[3:nrow(.),]
 
 germany[["other"]] <- list(id = "other",
                             longlabel = "Andere Parteien",
                             shortlabel = "Andere",
-                            selectors = stringr::str_to_lower(others_ltw$V1),
+                            selectors = stringr::str_to_lower(others_ltw),
                             color = c("grey"))
 
 partynames[["germany"]] <- germany
 
 names(germany)
+devtools::use_data(partynames,overwrite = TRUE)
+
 
 #######
 country <- "germany"

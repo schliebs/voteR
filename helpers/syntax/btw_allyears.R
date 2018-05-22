@@ -1,6 +1,7 @@
 # Funktionen Basics
 
 data(laender)
+data("partynames")
 
 
 `%without%` <- function(x, o) x<-x[!(x %in% o)] # returns vector without certain specified elements
@@ -51,6 +52,8 @@ for (fl in list.files(rawpath)){
     str_replace_all("BÜNDNIS 90/DIE GRÜNEN","gruene") %>%
     str_replace_all("Freie Demokratische Partei","fdp") %>%
     str_replace_all("Alternative für Deutschland","afd") %>%
+    str_replace_all("Die Republikaner","rep") %>%
+    str_replace_all("Nationaldemokratische Partei Deutschlands","npd") %>%
     str_replace_all("DIE LINKE","linke") %>%
     str_to_lower() %>%        #lower habe ich vorgezogen
     str_replace('erststimmen','') %>%
@@ -166,11 +169,11 @@ final <-
 
 
 allvars <- c("date","year","land","type","WKID","WKN","WKP","wahlberechtigte","waehler","ungueltige","gueltige")
-main_parties <- c("cdu","csu","spd","fdp","gruene","fdp","linke","afd")
+main_parties <- c("cdu","csu","spd","fdp","gruene","fdp","linke","afd","rep","npd")
 
 final$land %<>% str_replace_all("baden-wuettemberg","baden-wuerttemberg")
 
-bundestag_laenderebene <-
+bundestag_laenderebene_mitRechts <-
   final %>%
   filter (type == "second") %>%
   select(one_of(allvars,main_parties)) %>%
@@ -185,6 +188,6 @@ bundestag_laenderebene <-
   mutate_at(vars(date),funs(as.Date(.,format = "%d.%m.%Y"))) %>%
   mutate(level = "bundestagswahl")
 
-devtools::use_data(bundestag_laenderebene,overwrite = TRUE)
+devtools::use_data(bundestag_laenderebene_mitRechts,overwrite = TRUE)
 
-write.csv2(bundestag_laenderebene,"helpers/data/bundestag_all.csv")
+write.csv2(bundestag_laenderebene_mitRechts,"helpers/data/bundestag_all_mitRechts.csv")

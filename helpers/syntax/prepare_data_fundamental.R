@@ -4,11 +4,13 @@ library(magrittr)
 library(stringr)
 
 data("landtagswahlen")
-data("bundestag_laenderebene")
+data("landtagswahlen_mitRechts")
+
+data("bundestag_laenderebene_mitRechts")
 data("laender")
 
-data <- bind_rows(bundestag_laenderebene,
-                  landtagswahlen)
+data <- bind_rows(bundestag_laenderebene_mitRechts,
+                  landtagswahlen_mitRechts)
 
 # landtagswahlen %>% filter(land == "baden-wuerttemberg") %>% View()
 # bundestag_laenderebene %>% filter(land == "baden-wuerttemberg") %>% View()
@@ -81,7 +83,7 @@ lreg <-
 
 lreg$X.U.FEFF.Land %>% table()
 
-main_parties <- c("cdu","csu","spd","gruene","fdp","linke","afd","sonstige","other")
+main_parties <- c("cdu","csu","spd","gruene","fdp","linke","afd","npd","rep","sonstige","other")
 
 
 regpars<-
@@ -211,7 +213,7 @@ datafinal$lag_own[datafinal$firsttime == "Yes"] [sample(x = c(1:len),size = roun
 names(datafinal)
 head(datafinal)
 
-structural_modeldata <-
+structural_modeldata_mitRechts <-
   datafinal %>%
   rename(lag_ltw = lag_own,
          lag_btw = other,
@@ -221,13 +223,14 @@ structural_modeldata <-
          primeminister_name = Ministerpräsident,
          distance_btw_lag = distance_other_lag) %>%
   select(-distance_lag_own,-Amtszeit.Jahr,-Amtszeit.Datum,-Beteiligte.Parteien,-legislature,-level)%>%
-  mutate_at(vars(distance_btw_lag),funs(as.numeric(.)))
+  mutate_at(vars(distance_btw_lag),funs(as.numeric(.))) %>%
+  mutate(rightwing = ifelse(party %in% c("afd","npd","rep"),1,0))
 
 names(structural_modeldata)
 dim(structural_modeldata)
 
 
-devtools::use_data(structural_modeldata,overwrite = TRUE)
+devtools::use_data(structural_modeldata_mitRechts,overwrite = TRUE)
 
 landesregierungen <-
   lreg %>%
