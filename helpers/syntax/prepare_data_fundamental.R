@@ -43,10 +43,26 @@ df <-
 #   filter(distance_btw_t1 >0)
 
 
+df <-
+  df %>%
+  mutate(t_365 = as.Date(date) - as.difftime(365,unit = "days"),
+         t_182 = as.Date(date) - as.difftime(182,unit = "days"),
+         t_91  = as.Date(date) - as.difftime(91,unit = "days"),
+         t_30 = as.Date(date) - as.difftime(30,unit = "days"),
+         t_7 = as.Date(date) - as.difftime(7,unit = "days"),
+         t_0 = as.Date(date)) %>%
+  gather(lag,lagdate,t_365:t_0) %>%
+  mutate_at(vars(lag),funs(as.numeric(str_remove_all(.,"t_"))))
+
+
+
+
+
 result <- data.frame()
 
 parties <- df$party %>% unique()
 laenderr <- df$land%>% unique()
+
 
 for(l in laenderr){
   for(p in parties){
@@ -60,6 +76,13 @@ for(l in laenderr){
                       if(any(level[1:ind]!=gp_cur)) tail(vote[1:ind][level[1:ind]!=gp_cur], 1) else NA
                     }))
 
+    helper$other2 <-
+      with(helper, sapply(1:nrow(helper),
+                          function(ind) {
+                            gp_cur <- level[ind]
+                            if(any(level[1:ind]!=gp_cur)) tail(vote[1:ind][level[1:ind]!=gp_cur], 2)[1] else NA
+                          }))
+
     helper$dateother <-
       with(helper, sapply(1:nrow(helper),
                           function(ind) {
@@ -67,11 +90,25 @@ for(l in laenderr){
                             if(any(level[1:ind]!=gp_cur)) tail(as.character(date)[1:ind][level[1:ind]!=gp_cur], 1) else NA
                           }))
 
+    helper$dateother2 <-
+      with(helper, sapply(1:nrow(helper),
+                          function(ind) {
+                            gp_cur <- level[ind]
+                            if(any(level[1:ind]!=gp_cur)) tail(as.character(date)[1:ind][level[1:ind]!=gp_cur], 2)[1] else NA
+                          }))
+
     result <- bind_rows(result,helper)
+
   }
 }
 
 result %<>% filter(level == "landtagswahl")
+
+result <-
+  result %>%
+  mutate(otherdate = ifelse(lagdate > dateother,dateother,ifelse(lagdate > dateother2,dateother2,NA)),
+         othervalue = ifelse(lagdate > dateother,other,ifelse(lagdate > dateother2,other2,NA))) %>%
+  select(-c(other:dateother2))
 
 
   # weiter
@@ -190,7 +227,6 @@ relbip <-
   mutate(biplag = (bip/lag(bip,2))-1) %>%
   as.data.frame()
 
-
 datafinal <-
   xx %>% left_join(relbip %>% mutate_at(vars(year),funs(as.character(.))),by = c("land","year"))
 
@@ -202,7 +238,7 @@ datafinal %<>% mutate(lag_own = ifelse(is.na(lag_own),0.02,lag_own))
 datafinal %<>%
   arrange(land,party,year) %>%
   mutate(firsttime = ifelse((!is.na(vote)) & is.na(lag(vote)),"Yes","No"))  %>%
-  mutate(distance_other_lag = date - as.Date(dateother))
+  mutate(distance_other_lag = date - as.Date(otherdate))
 
 # look at this again
 len <- length(datafinal$lag_own[datafinal$firsttime == "Yes"])
@@ -213,12 +249,12 @@ datafinal$lag_own[datafinal$firsttime == "Yes"] [sample(x = c(1:len),size = roun
 names(datafinal)
 head(datafinal)
 
-structural_modeldata_mitRechts <-
+structural_modeldata_long <-
   datafinal %>%
   rename(lag_ltw = lag_own,
-         lag_btw = other,
+         lag_btw = othervalue,
          bipchange = biplag,
-         date_btw = dateother,
+         date_btw = otherdate,
          cabinet = Kabinett,
          primeminister_name = Ministerpräsident,
          distance_btw_lag = distance_other_lag) %>%
@@ -226,11 +262,11 @@ structural_modeldata_mitRechts <-
   mutate_at(vars(distance_btw_lag),funs(as.numeric(.))) %>%
   mutate(rightwing = ifelse(party %in% c("afd","npd","rep"),1,0))
 
-names(structural_modeldata)
-dim(structural_modeldata)
+names(structural_modeldata_long)
+dim(structural_modeldata_long)
 
 
-devtools::use_data(structural_modeldata_mitRechts,overwrite = TRUE)
+devtools::use_data(structural_modeldata_long,overwrite = TRUE)
 
 landesregierungen <-
   lreg %>%
