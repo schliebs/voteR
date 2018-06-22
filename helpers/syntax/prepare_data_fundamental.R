@@ -265,8 +265,8 @@ structural_modeldata_long <-
 names(structural_modeldata_long)
 dim(structural_modeldata_long)
 
-
 devtools::use_data(structural_modeldata_long,overwrite = TRUE)
+#saveRDS(structural_modeldata_long,file = "C:/Users/Schliebs/OneDrive/github/electionforecasting_bigdata/strData.rds")
 
 landesregierungen <-
   lreg %>%
