@@ -1,4 +1,4 @@
-scenarioID;scenarioSubID;scenarioFulLID;X1;Y1;Z1;X2;Y2;Z2;from1_FN;from1_LR;from1_PS;to1_FN;to1_LR;to1_PS;if1_prefFN;if1_prefLR;if1_prefPS;if1_pref_to_FN;if1_pref_to_LR;if1_pref_to_PS;level1;from2_FN;from2_LR;from2_PS;to2_FN;to2_LR;to2_PS;if2_prefFN;if2_prefLR;if2_prefPS;if2_pref_to_FN;if2_pref_to_LR;if2_pref_to_PS;level2;aim;
+;scenario;Cas;X1;Y1;Z1;X2;Y2;Z2;from1a_FN;from1a_LR;from1a_PS;to1a_FN;to1a_LR;to1a_PS;if1a_prefFN;if1a_prefLR;if1a_prefPS;if1a_pref_to_FN;if1a_pref_to_LR;if1a_pref_to_PS;level1;from2_FN;from2_LR;from2_PS;to2_FN;to2_LR;to2_PS;if2_prefFN;if2_prefLR;if2_prefPS;if2_pref_to_FN;if2_pref_to_LR;if2_pref_to_PS;level2;aim;
 2;;203;28%;31%;41%;46%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
 2;;204;28%;31%;41%;54%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
 2;;205;31%;28%;41%;46%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
@@ -157,3 +157,17 @@ scenarioID;scenarioSubID;scenarioFulLID;X1;Y1;Z1;X2;Y2;Z2;from1_FN;from1_LR;from
 11;b;1112;41%;32%;27%;46%;53%;55%;;;;;;;;;;;;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
 13;;1323;41%;32%;27%;54%;47%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
 13;;1324;41%;32%;27%;54%;53%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
