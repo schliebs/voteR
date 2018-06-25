@@ -1,0 +1,173 @@
+;scenario;Cas;X1;Y1;Z1;X2;Y2;Z2;from1a_FN;from1a_LR;from1a_PS;to1a_FN;to1a_LR;to1a_PS;if1a_prefFN;if1a_prefLR;if1a_prefPS;if1a_pref_to_FN;if1a_pref_to_LR;if1a_pref_to_PS;level1;from2_FN;from2_LR;from2_PS;to2_FN;to2_LR;to2_PS;if2_prefFN;if2_prefLR;if2_prefPS;if2_pref_to_FN;if2_pref_to_LR;if2_pref_to_PS;level2;aim;
+2;;203;28%;31%;41%;46%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
+2;;204;28%;31%;41%;54%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
+2;;205;31%;28%;41%;46%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
+2;;206;31%;28%;41%;54%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
+2;;207;29%;30%;41%;46%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
+2;;208;29%;30%;41%;54%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
+2;;209;30%;29%;41%;46%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
+2;;210;30%;29%;41%;54%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
+2;;211;27%;32%;41%;46%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
+2;;212;27%;32%;41%;54%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
+2;;213;32%;27%;41%;46%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
+2;;214;32%;27%;41%;54%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
+4;;403;28%;31%;41%;46%;53%;55%;1;;;;;1;;;;;;;incentives to switch from FN to PS ;;;;;;;;;;;;;incentives to switch from PS to LR if LR preferred to FN;1st & 2nd choice;93
+4;;404;28%;31%;41%;54%;53%;55%;1;;;;;1;;;;;;;incentives to switch from FN to PS;;;;;;;;;;;;;incentives to switch from PS to LR if LR preferred to FN;1st & 2nd choice;93
+4;;405;31%;28%;41%;46%;53%;55%;1;;;;;1;;;;;;;incentives to switch from FN to PS ;;;;;;;;;;;;;incentives to switch from PS to LR if LR preferred to FN;1st & 2nd choice;93
+4;;406;31%;28%;41%;54%;53%;55%;1;;;;;1;;;;;;;incentives to switch from FN to PS;;;;;;;;;;;;;incentives to switch from PS to LR if LR preferred to FN;1st & 2nd choice;93
+4;;407;29%;30%;41%;46%;53%;55%;1;;;;;1;;;;;;;incentives to switch from FN to PS ;;;;;;;;;;;;;incentives to switch from PS to LR if LR preferred to FN;1st & 2nd choice;93
+4;;408;29%;30%;41%;54%;53%;55%;1;;;;;1;;;;;;;incentives to switch from FN to PS;;;;;;;;;;;;;incentives to switch from PS to LR if LR preferred to FN;1st & 2nd choice;93
+4;;409;30%;29%;41%;46%;53%;55%;1;;;;;1;;;;;;;incentives to switch from FN to PS ;;;;;;;;;;;;;incentives to switch from PS to LR if LR preferred to FN;1st & 2nd choice;93
+4;;410;30%;29%;41%;54%;53%;55%;1;;;;;1;;;;;;;incentives to switch from FN to PS;;;;;;;;;;;;;incentives to switch from PS to LR if LR preferred to FN;1st & 2nd choice;93
+4;;411;27%;32%;41%;46%;53%;55%;1;;;;;1;;;;;;;incentives to switch from FN to PS ;;;;;;;;;;;;;incentives to switch from PS to LR if LR preferred to FN;1st & 2nd choice;93
+4;;412;27%;32%;41%;54%;53%;55%;1;;;;;1;;;;;;;incentives to switch from FN to PS;;;;;;;;;;;;;incentives to switch from PS to LR if LR preferred to FN;1st & 2nd choice;93
+4;;413;32%;27%;41%;46%;53%;55%;1;;;;;1;;;;;;;incentives to switch from FN to PS ;;;;;;;;;;;;;incentives to switch from PS to LR if LR preferred to FN;1st & 2nd choice;93
+4;;414;32%;27%;41%;54%;53%;55%;1;;;;;1;;;;;;;incentives to switch from FN to PS;;;;;;;;;;;;;incentives to switch from PS to LR if LR preferred to FN;1st & 2nd choice;93
+5;a;503;28%;31%;41%;46%;53%;45%;1;;;;;1;;;1;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;a;504;28%;31%;41%;54%;53%;45%;1;;;;;1;;;1;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;a;505;31%;28%;41%;46%;53%;45%;1;;;;;1;;;1;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;a;506;31%;28%;41%;54%;53%;45%;1;;;;;1;;;1;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;a;507;29%;30%;41%;46%;53%;45%;1;;;;;1;;;1;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;a;508;29%;30%;41%;54%;53%;45%;1;;;;;1;;;1;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;a;509;30%;29%;41%;46%;53%;45%;1;;;;;1;;;1;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;a;510;30%;29%;41%;54%;53%;45%;1;;;;;1;;;1;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;a;511;27%;32%;41%;46%;53%;45%;1;;;;;1;;;1;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;a;512;27%;32%;41%;54%;53%;45%;1;;;;;1;;;1;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;a;513;32%;27%;41%;46%;53%;45%;1;;;;;1;;;1;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;a;514;32%;27%;41%;54%;53%;45%;1;;;;;1;;;1;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;b;503;28%;31%;41%;46%;53%;45%;1;;;;1;;;1;;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;b;504;28%;31%;41%;54%;53%;45%;1;;;;1;;;1;;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;b;505;31%;28%;41%;46%;53%;45%;1;;;;1;;;1;;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;b;506;31%;28%;41%;54%;53%;45%;1;;;;1;;;1;;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;b;507;29%;30%;41%;46%;53%;45%;1;;;;1;;;1;;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;b;508;29%;30%;41%;54%;53%;45%;1;;;;1;;;1;;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;b;509;30%;29%;41%;46%;53%;45%;1;;;;1;;;1;;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;b;510;30%;29%;41%;54%;53%;45%;1;;;;1;;;1;;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;b;511;27%;32%;41%;46%;53%;45%;1;;;;1;;;1;;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;b;512;27%;32%;41%;54%;53%;45%;1;;;;1;;;1;;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;b;513;32%;27%;41%;46%;53%;45%;1;;;;1;;;1;;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;b;514;32%;27%;41%;54%;53%;45%;1;;;;1;;;1;;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+13;;1305;28%;31%;41%;46%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1306;28%;31%;41%;54%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1309;31%;28%;41%;46%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1310;31%;28%;41%;54%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1313;29%;30%;41%;46%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1314;29%;30%;41%;54%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1317;30%;29%;41%;46%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1318;30%;29%;41%;54%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1321;27%;32%;41%;46%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1322;27%;32%;41%;54%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1331;32%;27%;41%;46%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1332;32%;27%;41%;54%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+2;;201;30%;30%;40%;46%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
+2;;202;30%;30%;40%;54%;47%;45%;1;;;;1;;;;;;;;incentives to switch from FN to LR;;;;;;;;;;;;;incentives to switch from LR to PS if PS preferred to FN;1st & 2nd choice;93
+4;;401;30%;30%;40%;46%;53%;55%;1;;;;;1;;;;;;;incentives to switch from FN to PS ;;;;;;;;;;;;;incentives to switch from PS to LR if LR preferred to FN;1st & 2nd choice;93
+4;;402;30%;30%;40%;54%;53%;55%;1;;;;;1;;;;;;;incentives to switch from FN to PS;;;;;;;;;;;;;incentives to switch from PS to LR if LR preferred to FN;1st & 2nd choice;93
+5;a;501;30%;30%;40%;46%;53%;45%;1;;;;;1;;;1;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;a;502;30%;30%;40%;54%;53%;45%;1;;;;;1;;;1;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;b;501;30%;30%;40%;46%;53%;45%;1;;;;1;;;1;;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+5;b;502;30%;30%;40%;54%;53%;45%;1;;;;1;;;1;;1;;;incentives to switch from FN to PS if PS preferred to FN or from FN to LR if LR preferred to FN;;;;;;;;;;;;;;2nd choice;93
+13;;1301;30%;30%;40%;46%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1302;30%;30%;40%;54%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+3;;301;36%;28%;36%;46%;47%;45%;1;;;;1;;;1;;;;1;incentives to switch from FN to LR if LR preferred to PS;;;;;;;;;;;;;incentives to switch from PS to FN;1st & 2nd choice;654
+3;;302;36%;28%;36%;46%;53%;45%;1;;;;1;;;1;;;;1;incentives to switch from FN to LR if LR preferred to PS;;;;;;;;;;;;;incentives to switch from PS to FN;1st & 2nd choice;654
+12;;1201;36%;28%;36%;46%;53%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR if LR preferred to FN;;;;;;;;;;;;;incentives to switch from FN to PS;1st & 2nd choice;654
+12;;1202;36%;28%;36%;54%;53%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR if LR preferred to FN;;;;;;;;;;;;;incentives to switch from FN to PS;1st & 2nd choice;654
+13;;1325;36%;28%;36%;46%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1326;36%;28%;36%;54%;47%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1327;36%;28%;36%;54%;47%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1328;36%;28%;36%;54%;53%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+9;;913;41%;27%;32%;46%;47%;45%;;;1;1;;;;;;;;;incentives to switch from PS to FN ;;;;;;;;;;;;;incentives to switch from FN to LR  if LR preferred to PS;1st & 2nd choice;93
+9;;914;41%;27%;32%;46%;53%;45%;;;1;1;;;;;;;;;incentives to switch from PS to FN ;;;;;;;;;;;;;incentives to switch from FN to LR  if LR preferred to PS;1st & 2nd choice;93
+10;;1013;41%;27%;32%;54%;53%;55%;;;1;;1;;;;;;;;incentives to switch from PS to LR;;;;;;;;;;;;;incentives to switch from LR to FN if FN preferred to PS;1st & 2nd choice;93
+10;;1014;41%;27%;32%;54%;47%;55%;;;1;;1;;;;;;;;incentives to switch from PS to LR;;;;;;;;;;;;;incentives to switch from LR to FN if FN preferred to PS;1st & 2nd choice;93
+11;a;1113;41%;27%;32%;46%;47%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;a;1114;41%;27%;32%;46%;53%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;b;1113;41%;27%;32%;46%;47%;55%;;;1;1;;;1;;;;1;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;b;1114;41%;27%;32%;46%;53%;55%;;;1;1;;;1;;;;1;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+13;;1333;41%;27%;32%;54%;47%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1334;41%;27%;32%;54%;53%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+9;;905;41%;28%;31%;46%;47%;45%;;;1;1;;;;;;;;;incentives to switch from PS to FN ;;;;;;;;;;;;;incentives to switch from FN to LR  if LR preferred to PS;1st & 2nd choice;93
+9;;906;41%;28%;31%;46%;53%;45%;;;1;1;;;;;;;;;incentives to switch from PS to FN ;;;;;;;;;;;;;incentives to switch from FN to LR  if LR preferred to PS;1st & 2nd choice;93
+10;;1005;41%;28%;31%;54%;53%;55%;;;1;;1;;;;;;;;incentives to switch from PS to LR;;;;;;;;;;;;;incentives to switch from LR to FN if FN preferred to PS;1st & 2nd choice;93
+10;;1006;41%;28%;31%;54%;47%;55%;;;1;;1;;;;;;;;incentives to switch from PS to LR;;;;;;;;;;;;;incentives to switch from LR to FN if FN preferred to PS;1st & 2nd choice;93
+11;a;1105;41%;28%;31%;46%;47%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;a;1106;41%;28%;31%;46%;53%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;b;1105;41%;28%;31%;46%;47%;55%;;;1;1;;;1;;;;1;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;b;1106;41%;28%;31%;46%;53%;55%;;;1;1;;;1;;;;1;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+13;;1311;41%;28%;31%;54%;47%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1312;41%;28%;31%;54%;53%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+6;;601;30%;40%;30%;54%;53%;45%;;1;;1;;;;;;;;;incentives to switch from LR to FN;;;;;;;;;;;;;; 1st choice;654
+6;;602;30%;40%;30%;54%;53%;55%;;1;;1;;;;;;;;;incentives to switch from LR to FN;;;;;;;;;;;;;; 1st choice;654
+7;;701;30%;40%;30%;46%;47%;45%;;1;;;1;;;;;;;;incentives to switch from LR to PS;;;;;;;;;;;;;; 1st choice;654
+7;;702;30%;40%;30%;46%;47%;55%;;1;;;1;;;;;;;;incentives to switch from LR to PS;;;;;;;;;;;;;; 1st choice;654
+8;a;801;30%;40%;30%;54%;47%;45%;;1;;;;1;;;1;1;;;incentives to switch from LR to PS  if PS preferred to FN or from LR to FN  if FN preferred to PS;;;;;;;;;;;;;;2nd choice;654
+8;a;802;30%;40%;30%;54%;47%;55%;;1;;;;1;;;1;1;;;incentives to switch from LR to PS  if PS preferred to FN or from LR to FN  if FN preferred to PS;;;;;;;;;;;;;;2nd choice;654
+8;b;801;30%;40%;30%;54%;47%;45%;;1;;1;;;1;;;;;1;incentives to switch from LR to PS  if PS preferred to FN or from LR to FN  if FN preferred to PS;;;;;;;;;;;;;;2nd choice;654
+8;b;802;30%;40%;30%;54%;47%;55%;;1;;1;;;1;;;;;1;incentives to switch from LR to PS  if PS preferred to FN or from LR to FN  if FN preferred to PS;;;;;;;;;;;;;;2nd choice;654
+9;;901;40%;30%;30%;46%;47%;45%;;;1;1;;;;;;;;;incentives to switch from PS to FN ;;;;;;;;;;;;;incentives to switch from FN to LR  if LR preferred to PS;1st & 2nd choice;93
+9;;902;40%;30%;30%;46%;53%;45%;;;1;1;;;;;;;;;incentives to switch from PS to FN ;;;;;;;;;;;;;incentives to switch from FN to LR  if LR preferred to PS;1st & 2nd choice;93
+9;;909;41%;29%;30%;46%;47%;45%;;;1;1;;;;;;;;;incentives to switch from PS to FN ;;;;;;;;;;;;;incentives to switch from FN to LR  if LR preferred to PS;1st & 2nd choice;93
+9;;910;41%;29%;30%;46%;53%;45%;;;1;1;;;;;;;;;incentives to switch from PS to FN ;;;;;;;;;;;;;incentives to switch from FN to LR  if LR preferred to PS;1st & 2nd choice;93
+10;;1001;40%;30%;30%;54%;53%;55%;;;1;;1;;;;;;;;incentives to switch from PS to LR;;;;;;;;;;;;;incentives to switch from LR to FN if FN preferred to PS;1st & 2nd choice;93
+10;;1002;40%;30%;30%;54%;47%;55%;;;1;;1;;;;;;;;incentives to switch from PS to LR;;;;;;;;;;;;;incentives to switch from LR to FN if FN preferred to PS;1st & 2nd choice;93
+10;;1009;41%;29%;30%;54%;53%;55%;;;1;;1;;;;;;;;incentives to switch from PS to LR;;;;;;;;;;;;;incentives to switch from LR to FN if FN preferred to PS;1st & 2nd choice;93
+10;;1010;41%;29%;30%;54%;47%;55%;;;1;;1;;;;;;;;incentives to switch from PS to LR;;;;;;;;;;;;;incentives to switch from LR to FN if FN preferred to PS;1st & 2nd choice;93
+11;a;1101;40%;30%;30%;46%;47%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;a;1102;40%;30%;30%;46%;53%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;a;1109;41%;29%;30%;46%;47%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;a;1110;41%;29%;30%;46%;53%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;b;1101;40%;30%;30%;46%;47%;55%;;;1;1;;;1;;;;1;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;b;1102;40%;30%;30%;46%;53%;55%;;;1;1;;;1;;;;1;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;b;1109;41%;29%;30%;46%;47%;55%;;;1;1;;;1;;;;1;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;b;1110;41%;29%;30%;46%;53%;55%;;;1;1;;;1;;;;1;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+13;;1303;40%;30%;30%;54%;47%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1304;40%;30%;30%;54%;53%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1319;41%;29%;30%;54%;47%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1320;41%;29%;30%;54%;53%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1329;30%;40%;30%;46%;53%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1330;30%;40%;30%;46%;53%;55%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+9;;907;41%;30%;29%;46%;47%;45%;;;1;1;;;;;;;;;incentives to switch from PS to FN ;;;;;;;;;;;;;incentives to switch from FN to LR  if LR preferred to PS;1st & 2nd choice;93
+9;;908;41%;30%;29%;46%;53%;45%;;;1;1;;;;;;;;;incentives to switch from PS to FN ;;;;;;;;;;;;;incentives to switch from FN to LR  if LR preferred to PS;1st & 2nd choice;93
+10;;1007;41%;30%;29%;54%;53%;55%;;;1;;1;;;;;;;;incentives to switch from PS to LR;;;;;;;;;;;;;incentives to switch from LR to FN if FN preferred to PS;1st & 2nd choice;93
+10;;1008;41%;30%;29%;54%;47%;55%;;;1;;1;;;;;;;;incentives to switch from PS to LR;;;;;;;;;;;;;incentives to switch from LR to FN if FN preferred to PS;1st & 2nd choice;93
+11;a;1107;41%;30%;29%;46%;47%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;a;1108;41%;30%;29%;46%;53%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;b;1107;41%;30%;29%;46%;47%;55%;;;1;1;;;1;;;;1;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;b;1108;41%;30%;29%;46%;53%;55%;;;1;1;;;1;;;;1;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+13;;1315;41%;30%;29%;54%;47%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1316;41%;30%;29%;54%;53%;45%;;;1;1;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+9;;903;41%;31%;28%;46%;47%;45%;;;1;1;;;;;;;;;incentives to switch from PS to FN ;;;;;;;;;;;;;incentives to switch from FN to LR  if LR preferred to PS;1st & 2nd choice;93
+9;;904;41%;31%;28%;46%;53%;45%;;;1;;1;;;;;;;;incentives to switch from PS to FN ;;;;;;;;;;;;;incentives to switch from FN to LR  if LR preferred to PS;1st & 2nd choice;93
+10;;1003;41%;31%;28%;54%;53%;55%;;;1;;1;;;;;;;;incentives to switch from PS to LR;;;;;;;;;;;;;incentives to switch from LR to FN if FN preferred to PS;1st & 2nd choice;93
+10;;1004;41%;31%;28%;54%;47%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR;;;;;;;;;;;;;incentives to switch from LR to FN if FN preferred to PS;1st & 2nd choice;93
+11;a;1103;41%;31%;28%;46%;47%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;a;1104;41%;31%;28%;46%;53%;55%;;;1;1;;;1;;;;1;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;b;1103;41%;31%;28%;46%;47%;55%;;;1;1;;;1;;;;1;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;b;1104;41%;31%;28%;46%;53%;55%;;;;;;;;;;;;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+13;;1307;41%;31%;28%;54%;47%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1308;41%;31%;28%;54%;53%;45%;;;1;1;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+9;;911;41%;32%;27%;46%;47%;45%;;;1;1;;;;;;;;;incentives to switch from PS to FN ;;;;;;;;;;;;;incentives to switch from FN to LR  if LR preferred to PS;1st & 2nd choice;93
+9;;912;41%;32%;27%;46%;53%;45%;;;1;;1;;;;;;;;incentives to switch from PS to FN ;;;;;;;;;;;;;incentives to switch from FN to LR  if LR preferred to PS;1st & 2nd choice;93
+10;;1011;41%;32%;27%;54%;53%;55%;;;1;;1;;;;;;;;incentives to switch from PS to LR;;;;;;;;;;;;;incentives to switch from LR to FN if FN preferred to PS;1st & 2nd choice;93
+10;;1012;41%;32%;27%;54%;47%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR;;;;;;;;;;;;;incentives to switch from LR to FN if FN preferred to PS;1st & 2nd choice;93
+11;a;1111;41%;32%;27%;46%;47%;55%;;;1;;1;;;1;;1;;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;a;1112;41%;32%;27%;46%;53%;55%;;;1;1;;;1;;;;1;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;b;1111;41%;32%;27%;46%;47%;55%;;;1;1;;;1;;;;1;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+11;b;1112;41%;32%;27%;46%;53%;55%;;;;;;;;;;;;;incentives to switch from PS to LR  if LR preferred to FN or PS to FN  if FN preferred to LR;;;;;;;;;;;;;;2nd choice;93
+13;;1323;41%;32%;27%;54%;47%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+13;;1324;41%;32%;27%;54%;53%;45%;;;;;;;;;;;;;no incentives to strategic voting;;;;;;;;;;;;;;no;38
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
