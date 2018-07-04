@@ -191,3 +191,26 @@ bundestag_laenderebene_mitRechts <-
 devtools::use_data(bundestag_laenderebene_mitRechts,overwrite = TRUE)
 
 write.csv2(bundestag_laenderebene_mitRechts,"helpers/data/bundestag_all_mitRechts.csv")
+
+
+####
+
+bundestag_bundesebene <-
+  final %>%
+  filter (type == "second") %>%
+  select(one_of(allvars,main_parties)) %>%
+  group_by(year,date) %>%
+  summarise_at(vars(one_of("wahlberechtigte", "waehler","ungueltige","gueltige",main_parties)),funs(sum(.))) %>%
+  ungroup() %>%
+  mutate_at(vars(one_of(main_parties)),
+            funs(./gueltige)) %>%
+  mutate(wbt = waehler/wahlberechtigte) %>%
+  mutate(others = 1- rowSums(select(.,one_of(main_parties)),na.rm = T)) %>%
+  select(-wahlberechtigte,-waehler,-gueltige,-ungueltige) %>%
+  mutate_at(vars(date),funs(as.Date(.,format = "%d.%m.%Y"))) %>%
+  mutate(level = "bundestagswahl")
+
+devtools::use_data(bundestag_bundesebene,overwrite = TRUE)
+
+write.csv2(bundestag_bundesebene,"helpers/data/bundestag_bundesebene.csv")
+

@@ -1,4 +1,3 @@
-library(plyr)
 library(tidyverse)
 library(magrittr)
 library(stringr)
@@ -53,8 +52,6 @@ df <-
          t_0 = as.Date(date)) %>%
   gather(lag,lagdate,t_365:t_0) %>%
   mutate_at(vars(lag),funs(as.numeric(str_remove_all(.,"t_"))))
-
-
 
 
 
@@ -215,6 +212,7 @@ remove_umlaut <- function(x){
   return(y)
 }
 
+
 names(bip) <- mgsub(as.character(laender$shortlabel),as.character(laender$fullabel),names(bip)) %>%
   str_to_lower() %>% remove_umlaut() %>% str_replace_all("ï..jahr","year")
 
@@ -224,8 +222,15 @@ relbip <-
   select(-d) %>%
   gather(-year,key = land,value = bip) %>%
   group_by(land) %>%
-  mutate(biplag = (bip/lag(bip,2))-1) %>%
+  mutate(lag45 = (lag(bip,4)/lag(bip,5))-1,
+         lag34 = (lag(bip,3)/lag(bip,4))-1,
+         lag23 = (lag(bip,2)/lag(bip,3))-1,
+         lag12 = (lag(bip,1)/lag(bip,2))-1,
+         lag01 = (bip/lag(bip,1))-1) %>%
   as.data.frame()
+relbip$biplag = rowMeans(relbip[, c("lag45","lag34","lag23","lag12")],na.rm = T)
+relbip$biplag[is.nan(relbip$biplag)] <- NA
+relbip$biplag2 <- relbip$lag12
 
 datafinal <-
   xx %>% left_join(relbip %>% mutate_at(vars(year),funs(as.character(.))),by = c("land","year"))
@@ -237,7 +242,9 @@ datafinal %<>% mutate(lag_own = ifelse(is.na(lag_own),0.02,lag_own))
 
 datafinal %<>%
   arrange(land,party,year) %>%
+  group_by(lag) %>%
   mutate(firsttime = ifelse((!is.na(vote)) & is.na(lag(vote)),"Yes","No"))  %>%
+  ungroup() %>%
   mutate(distance_other_lag = date - as.Date(otherdate))
 
 # look at this again
@@ -253,7 +260,8 @@ structural_modeldata_long <-
   datafinal %>%
   rename(lag_ltw = lag_own,
          lag_btw = othervalue,
-         bipchange = biplag,
+         bipchange_avg = biplag,
+         bipchange = biplag2,
          date_btw = otherdate,
          cabinet = Kabinett,
          primeminister_name = Ministerpräsident,
@@ -266,7 +274,8 @@ names(structural_modeldata_long)
 dim(structural_modeldata_long)
 
 devtools::use_data(structural_modeldata_long,overwrite = TRUE)
-#saveRDS(structural_modeldata_long,file = "C:/Users/Schliebs/OneDrive/github/electionforecasting_bigdata/strData.rds")
+
+saveRDS(structural_modeldata_long,file = "C:/Users/Schliebs/OneDrive/github/electionforecasting_bigdata/strData.rds")
 
 landesregierungen <-
   lreg %>%
@@ -288,3 +297,4 @@ devtools::use_data(landesregierungen,overwrite = TRUE)
 
 laenderbip <- bip
 devtools::use_data(laenderbip,overwrite = TRUE)
+
