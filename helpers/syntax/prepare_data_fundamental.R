@@ -2,6 +2,8 @@ library(tidyverse)
 library(magrittr)
 library(stringr)
 
+impose_lag <- 0.00
+
 data("landtagswahlen")
 data("landtagswahlen_mitRechts")
 
@@ -10,6 +12,27 @@ data("laender")
 
 data <- bind_rows(bundestag_laenderebene_mitRechts,
                   landtagswahlen_mitRechts)
+
+names(data)
+new2018 <- data.frame(year = c("2018","2018"),
+                      land = c("bayern","hessen"),
+                      date = c(as.Date("2018-10-14"),as.Date("2018-10-28")),
+                      cdu = c(NA,0.27),
+                      csu = c(0.372,NA),
+                      spd = c(0.097,0.198),
+                      fdp = c(0.051,0.075),
+                      gruene = c(0.176,0.198),
+                      linke = c(0.032,0.063),
+                      afd = c(0.102,0.131),
+                      rep = c(NA,NA),
+                      npd = c(NA,0.002),
+                      wbt = c(0.732,0.673),
+                      level = c("landtagswahl","landtagswahl")) %>%
+  mutate(others = 1-rowSums(select(.,cdu,csu,spd,fdp,gruene,linke,afd,rep,npd),na.rm =T))
+
+data <- bind_rows(data,new2018)
+
+data$rightwing <- rowSums(data.frame(data$npd,data$afd,data$rep),na.rm = T)
 
 # landtagswahlen %>% filter(land == "baden-wuerttemberg") %>% View()
 # bundestag_laenderebene %>% filter(land == "baden-wuerttemberg") %>% View()
@@ -21,7 +44,7 @@ data <- bind_rows(bundestag_laenderebene_mitRechts,
 #data %<>% filter(date >= "1990-12-02")
 
 data2 <-
-  data %>% gather(party,vote,cdu:others,-wbt) %>%
+  data %>% gather(party,vote,cdu:others,rightwing,-wbt) %>%
   mutate(partytype = ifelse(party %in% c("cdu","csu"),"union",ifelse(party %in% "spd","spd","small/other")))
 
 
@@ -170,12 +193,10 @@ lreg2 <-
 
 lreg$legislature <- lreg2$r
 
-
 lastlregbeforeelection <-
   lreg %>%
   group_by(land,legislature) %>%
   slice(which.max(end))
-
 
 xx <- left_join(result,
                 lastlregbeforeelection,
@@ -195,7 +216,7 @@ xx <- xx %>%
 
 ####### BIP DATA
 
-bip <- read.csv2("helpers/rawdata/bip.csv",stringsAsFactors = F) %>%
+bip <- read.csv2("helpers/rawdata/bip2018.csv",stringsAsFactors = F,encoding = "UTF-8") %>%
   mutate_at(vars(D),funs(str_replace(.,"\\.",""))) %>%
   mutate_all(funs(as.character(.))) %>%  mutate_all(funs(as.numeric(.)))
 
@@ -212,9 +233,10 @@ remove_umlaut <- function(x){
   return(y)
 }
 
+laender$fullabel <- laender$fullabel %>% str_replace_all("Baden-WÃ¼rttemberg","Baden-Württemberg") %>% str_replace_all("ThÃ¼ringen","Thüringen")
 
-names(bip) <- mgsub(as.character(laender$shortlabel),as.character(laender$fullabel),names(bip)) %>%
-  str_to_lower() %>% remove_umlaut() %>% str_replace_all("ï..jahr","year")
+names(bip) <- mgsub(as.character(laender$shortlabel),str_replace_all(as.character(laender$fullabel),"ü","ue"),names(bip)) %>%
+  str_to_lower() %>% remove_umlaut() %>% str_replace_all("x.u.feff.jahr","year")
 
 relbip <-
   bip %>%
@@ -238,7 +260,7 @@ datafinal <-
 datafinal$partytype %<>% as.factor() %>% relevel(ref = "union")
 
 # assumption
-datafinal %<>% mutate(lag_own = ifelse(is.na(lag_own),0.02,lag_own))
+datafinal %<>% mutate(lag_own = ifelse(is.na(lag_own),impose_lag,lag_own))
 
 datafinal %<>%
   arrange(land,party,year) %>%
@@ -247,9 +269,6 @@ datafinal %<>%
   ungroup() %>%
   mutate(distance_other_lag = date - as.Date(otherdate))
 
-# look at this again
-len <- length(datafinal$lag_own[datafinal$firsttime == "Yes"])
-datafinal$lag_own[datafinal$firsttime == "Yes"] [sample(x = c(1:len),size = round(len/2))] <- 0.01
 
 ########
 
@@ -268,14 +287,16 @@ structural_modeldata_long <-
          distance_btw_lag = distance_other_lag) %>%
   select(-distance_lag_own,-Amtszeit.Jahr,-Amtszeit.Datum,-Beteiligte.Parteien,-legislature,-level)%>%
   mutate_at(vars(distance_btw_lag),funs(as.numeric(.))) %>%
-  mutate(rightwing = ifelse(party %in% c("afd","npd","rep"),1,0))
+  mutate(rightwingdummy = ifelse(party %in% c("afd","npd","rep"),1,0))
 
 names(structural_modeldata_long)
 dim(structural_modeldata_long)
 
 devtools::use_data(structural_modeldata_long,overwrite = TRUE)
 
-saveRDS(structural_modeldata_long,file = "C:/Users/Schliebs/OneDrive/github/electionforecasting_bigdata/strData.rds")
+saveRDS(structural_modeldata_long,file = "C:/Users/MS/OneDrive/github/paper/thesis/data/final/strData_final.rds")
+
+
 
 landesregierungen <-
   lreg %>%
@@ -290,8 +311,6 @@ landesregierungen <-
 dim(landesregierungen)
 
 devtools::use_data(landesregierungen,overwrite = TRUE)
-
-
 
 # BIP
 

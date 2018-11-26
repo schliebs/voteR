@@ -4,8 +4,8 @@
 \alias{sample_dirichlet}
 \title{Dirichlet-sample of a multinomial election poll}
 \usage{
-sample_dirichlet(vote = c(cdu = 0.5, spd = 0.4, fdp = 0.1), sample_n = 1000,
-  n_draw = 10000)
+sample_dirichlet(vote = c(cdu = 0.5, spd = 0.4, fdp = 0.1),
+  sample_n = 1000, n_draw = 10000)
 }
 \arguments{
 \item{vote}{A labeled party vote share vector.}

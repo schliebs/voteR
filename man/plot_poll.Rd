@@ -4,8 +4,8 @@
 \alias{plot_poll}
 \title{Plot a multiparty poll}
 \usage{
-plot_poll(vote = c(cdu = 0.33, spd = 0.2, fdp = 0.11, linke = 0.09, gruene =
-  0.09, afd = 0.12, sonstige = 0.05), order = "alphabetical",
+plot_poll(vote = c(cdu = 0.33, spd = 0.2, fdp = 0.11, linke = 0.09,
+  gruene = 0.09, afd = 0.12, sonstige = 0.05), order = "alphabetical",
   sample_confidence_bounds = TRUE, sample_n = 1000, n_draw = 10000,
   show_quantiles = c(0.05, 0.95), round = 1, xlab = "Party",
   ylab = "Voteshare", title = "Title", subtitle = "Subtitle",

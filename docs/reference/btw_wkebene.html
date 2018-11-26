@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Input Data for structural model — structural_modeldata • voteR</title>
+<title>German "Landtagswahlen" election results for the regional laender level 1946-2018 — btw_wkebene • voteR</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Input Data for structural model — structural_modeldata" />
+<meta property="og:title" content="German "Landtagswahlen" election results for the regional laender level 1946-2018 — btw_wkebene" />
 
-<meta property="og:description" content="Input Data for structural model" />
+<meta property="og:description" content="German &quot;Landtagswahlen&quot; election results for the regional laender level 1946-2018" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -117,45 +117,32 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Input Data for structural model</h1>
+    <h1>German "Landtagswahlen" election results for the regional laender level 1946-2018</h1>
     
-    <div class="hidden name"><code>structural_modeldata.Rd</code></div>
+    <div class="hidden name"><code>btw_wkebene.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Input Data for structural model</p>
+    <p>German "Landtagswahlen" election results for the regional laender level 1946-2018</p>
     
     </div>
 
-    <pre class="usage"><span class='no'>structural_modeldata</span></pre>
+    <pre class="usage"><span class='no'>btw_wkebene</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 1864 rows and 25 variables:</p><dl class='dl-horizontal'>
+    <p>A data frame with 10633 rows and ^74 variables:</p><dl class='dl-horizontal'>
   <dt>year</dt><dd><p>election year</p></dd>
-  <dt>land</dt><dd><p>regional level</p></dd>
-  <dt>date</dt><dd><p>election date</p></dd>
-  <dt>wbt</dt><dd><p>voter turnout</p></dd>
-  <dt>party</dt><dd><p>party name</p></dd>
-  <dt>vote</dt><dd><p>vote share</p></dd>
-  <dt>partytype</dt><dd><p>classification in spd/union/small and others</p></dd>
-  <dt>lag_ltw</dt><dd><p>one-period lag of landtagswahl result</p></dd>
-  <dt>lag_btw</dt><dd><p>one-period lag of bundestagswahl result (of that party in that state)</p></dd>
-  <dt>date_btw</dt><dd><p>date of the last bundestagswahl</p></dd>
-  <dt>cabinet</dt><dd><p>name of the cabinet</p></dd>
-  <dt>primeminister_name</dt><dd><p>name of the incumbent prime minister</p></dd>
-  <dt>party_x</dt><dd><p>1st to 3rd party listing coalition members (1st party is party of PM)</p></dd>
-  <dt>start</dt><dd><p>year that the incumbent government was formed</p></dd>
-  <dt>end</dt><dd><p>year it was replaced</p></dd>
-  <dt>primeminister</dt><dd><p>Logical T/F if party is holding incumbency of PM</p></dd>
-  <dt>gov</dt><dd><p>Logical T/F if party is incumbent coalition member</p></dd>
-  <dt>juniorpartner</dt><dd><p>T/F if party is junior partner (gov but not PM)</p></dd>
-  <dt>bip</dt><dd><p>absolute bip in billion €</p></dd>
-  <dt>bipchange</dt><dd><p>change in bip in the last 2 years prior to the election</p></dd>
-  <dt>firsttime</dt><dd><p>Logical T/F if party is firsttime contender</p></dd>
-  <dt>distance_btw_lag</dt><dd><p>distance to last Bundestagswahl in days</p></dd>
-  <dt>others</dt><dd><p>other parties</p></dd>
+  <dt>WKID</dt><dd><p>constituency ID</p></dd>
+  <dt>type</dt><dd><p>first or second vote</p></dd>
+  <dt>WKN</dt><dd><p>constituency name</p></dd>
+  <dt>WKÜ</dt><dd><p>state affiliation</p></dd>
+  <dt>wahlberechtigte</dt><dd><p>registered voters</p></dd>
+  <dt>waehler</dt><dd><p>voters</p></dd>
+  <dt>ungueltige</dt><dd><p>invalid votes</p></dd>
+  <dt>gueltige</dt><dd><p>valid votes</p></dd>
+  <dt>...</dt><dd><p>other parties</p></dd>
 </dl>
     
 

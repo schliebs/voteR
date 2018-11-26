@@ -4,8 +4,8 @@
 \alias{intrakoadistanz}
 \title{Calculate Intra-Coalition Heterogeneity}
 \usage{
-intrakoadistanz(who = "schwarzgelb", issue = "lr", input = "gles2017_out",
-  year = 2017)
+intrakoadistanz(who = "schwarzgelb", issue = "lr",
+  input = "gles2017_out", year = 2017)
 }
 \value{
 The vector including all coalitions.

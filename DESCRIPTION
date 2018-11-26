@@ -8,7 +8,6 @@ Depends:
   R (>= 3.4.1),
   ggplot2,
   tidyverse,
-  conflicted
 License: MIT
 Encoding: UTF-8
 URL: schliebs.github.io/voteR
@@ -22,12 +21,11 @@ Imports:
   magrittr,
   stringr,
   tidyr
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 Collate: 
     'constituencymaps.R'
     'gles.R'
     'importFrom.R'
-    'make_dictionary.R'
     'partycolors.R'
     'partynames.R'
     'polling.R'

@@ -28,6 +28,23 @@
 #' }
 "landtagswahlen"
 
+#' German "Bundestagswahlen" election results for the constituency/district level (1949-2017)
+#'
+#' @format A data frame with 10633 rows and 74 variables:
+#' \describe{
+#'   \item{year}{election year}
+#'   \item{WKID}{constituency ID}
+#'   \item{type}{first or second vote}
+#'   \item{WKN}{constituency name}
+#'   \item{WKÜ}{state affiliation}
+#'   \item{wahlberechtigte}{registered voters}
+#'   \item{waehler}{voters}
+#'   \item{ungueltige}{invalid votes}
+#'   \item{gueltige}{valid votes}
+#'   \item{...}{other parties}
+#' }
+"btw_wkebene"
+
 
 #' Input Data for structural model
 #'
