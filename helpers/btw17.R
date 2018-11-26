@@ -109,6 +109,6 @@ for (fl in list.files(rawpath)){
 
 }
 
-btw_wkebene = result
+btw_districtlevel = result
 
-devtools::use_data(btw_wkebene)
+devtools::use_data(btw_districtlevel)
