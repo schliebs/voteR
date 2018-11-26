@@ -111,4 +111,4 @@ for (fl in list.files(rawpath)){
 
 btw_districtlevel = result
 
-devtools::use_data(btw_districtlevel)
+usethis::use_data(btw_districtlevel)

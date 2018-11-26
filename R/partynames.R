@@ -79,7 +79,7 @@ germany[["other"]] <- list(id = "other",
 partynames[["germany"]] <- germany
 
 names(germany)
-devtools::use_data(partynames,overwrite = TRUE)
+#devtools::use_data(partynames,overwrite = TRUE)
 
 
 #######
@@ -227,7 +227,7 @@ laender <-
                                  "SH",
                                  "TH"))
 
-devtools::use_data(laender,overwrite = TRUE)
+#devtools::use_data(laender,overwrite = TRUE)
 
 
 
