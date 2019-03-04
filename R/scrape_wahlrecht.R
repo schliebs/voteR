@@ -188,16 +188,19 @@ scrape_wahlrecht_bund <- function(institutes = c("allensbach",
 
   meta_vars <- c("date","year","institute","raw_by_institute","participants","enddate","startdate")
 
-  df %>%
+  out <-
+    df %>%
     select(one_of(meta_vars,parties)) %>%
     mutate(others = 1 - rowSums(select(., one_of(parties))))
 
   cat(crayon::green(paste0("Scraping finished. You have selected polls including ",crayon::red(paste0(parties,collapse = ", "))," from the institutes ",crayon::cyan(paste0(institutes,collapse = ", ")),". If using the data, please cite both the authors of wahlrecht.de as well as the API proived by voteR\n")))
 
+  return(out)
 }
 
-
-
+library(voteR)
+df <-
+  scrape_wahlrecht_bund()
 
 
 
