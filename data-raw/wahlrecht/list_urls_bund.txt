@@ -36,7 +36,7 @@ http://www.wahlrecht.de/umfragen/politbarometer/stimmung-2005.htm
 http://www.wahlrecht.de/umfragen/politbarometer/stimmung-2009.htm
 http://www.wahlrecht.de/umfragen/politbarometer/stimmung-2013.htm
 http://www.wahlrecht.de/umfragen/politbarometer/stimmung-2017.htm
-http://www.wahlrecht.de/umfragen/politbarometer/politbarometer.htm
+http://www.wahlrecht.de/umfragen/politbarometer.htm
 http://www.wahlrecht.de/umfragen/politbarometer/politbarometer-1998.htm
 http://www.wahlrecht.de/umfragen/politbarometer/politbarometer-2002.htm
 http://www.wahlrecht.de/umfragen/politbarometer/politbarometer-2005.htm
