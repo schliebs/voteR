@@ -198,9 +198,7 @@ scrape_wahlrecht_bund <- function(institutes = c("allensbach",
   return(out)
 }
 
-library(voteR)
-df <-
-  scrape_wahlrecht_bund()
+#df <-  scrape_wahlrecht_bund()
 
 
 
