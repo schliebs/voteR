@@ -4,4 +4,5 @@ pkgdown_sha: ~
 articles:
   runR: runR.html
   vignette2: vignette2.html
+  vig_polldata: vig_polldata.html
 

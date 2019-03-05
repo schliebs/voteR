@@ -16,50 +16,104 @@ knitr::opts_chunk$set(
 )
 ```
 
-lorrem ipsssilalal tikitaka Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+introductory remarks
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
-
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+```{r,warning=FALSE}
+library(voteR)
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+Scrape all available polls. 
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+```{r,warning = FALSE}
+df <- scrape_wahlrecht_bund()
 ```
 
-Also a quote using `>`:
+Explore how many polls are available in total: 
+```{r}
+nrow(df)
+```
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+And split up by institute: 
+```{r}
+df %>% pull(institute) %>% table()
+```
+
+Check out the availbe variables: 
+```{r}
+colnames(df)
+```
+
+Print the first 10 observations to see an example:
+
+```{r}
+df %>% slice(1:10)
+```
+
+## Select polling institutes
+
+Furthermore, a set of institutes to be included can be selected via a character vector passed to the `institutes` parameter. Possible options include `allensbach`, `emnid`, `forsa`, `politbarometer`, `gms`, `dimap`, `insa`, and `yougov`
+
+```{r,warning =F}
+scrape_wahlrecht_bund(institutes = c("dimap","politbarometer"))
+```
+
+## Include Unweighted Raw Data (if available)
+
+Lastly, for some institutes (namely `Politbarometer` and `GMS`), it is also possible to include (declared) raw-data which has not been post-treated or weighted. These data points are excluded by default but can be included by using the `include_rawdata = TRUE` option. 
+
+```{r,warning = F}
+scrape_wahlrecht_bund(include_rawdata = T) %>% 
+  filter(raw_by_institute == T)
+```
+
+
+# Visualize Polls
+
+```{r,warning = F}
+library(ggplot2)
+
+ggpoll <- 
+  df %>% 
+  gather(party,pollscore,`cdu/csu`:others) %>% 
+  filter(!party %in% c("others")) %>%
+  ggplot(aes(x = as.Date(date,"%d.%m.%Y"),
+                 y = pollscore)) + 
+  geom_point(alpha = 0.1) + 
+  geom_smooth(aes(col = party)) + 
+  facet_wrap(~party,scales = "free")
+ggpoll
+```
+
+Restrict graph to last legislative period only:
+```{r}
+ggpoll2 <- 
+  ggpoll + 
+  scale_x_date(limits = c(as.Date("2017-09-22"),Sys.Date()))
+ggpoll2
+```
+
+And adjust party colors accordingly:
+
+```{r}
+partycolors_ger <- c(spd = "red",
+                     cdu = "black",
+                     cdu_csu = "black",
+                     `cdu/csu` = "black",
+                     csu = "darkblue",
+                     gruene = "darkgreen",
+                     grüne = "darkgreen",
+                     fdp =  "#999900",
+                     afd = "blue",
+                     piraten = "orange",
+                     linke = "purple",
+                     andere = "black",
+                     sonstige = "grey")
+
+ggpoll2 + 
+  scale_color_manual(values = partycolors_ger) + 
+  theme_minimal() + 
+  labs(x = "Date",
+       y = "Pollscore")
+
+```
+
