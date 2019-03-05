@@ -31,7 +31,7 @@ extractGermanParties <- function(x,sonstige = F){
   return(out_df)
 }
 
-replace_empty_with_na(c("A",""," "))
+#replace_empty_with_na(c("A",""," "))
 
 remove_emptycols <- function(df){
 
@@ -185,13 +185,17 @@ scrape_wahlrecht_bund <- function(institutes = c("allensbach",
         .f = ~ parse_wahlrecht_url(.x)) %>%
     bind_rows()
 
+  df <-
+    df %>%
+    mutate(linke = rowSums(select(., one_of("linke","linke.pds","pds","pds.linke")),na.rm = T))
+
 
   meta_vars <- c("date","year","institute","raw_by_institute","participants","enddate","startdate")
 
   out <-
     df %>%
     select(one_of(meta_vars,parties)) %>%
-    mutate(others = 1 - rowSums(select(., one_of(parties))))
+    mutate(others = 1 - rowSums(select(., one_of(parties)),na.rm = T))
 
   cat(crayon::green(paste0("Scraping finished. You have selected polls including ",crayon::red(paste0(parties,collapse = ", "))," from the institutes ",crayon::cyan(paste0(institutes,collapse = ", ")),". If using the data, please cite both the authors of wahlrecht.de as well as the API proived by voteR\n")))
 
